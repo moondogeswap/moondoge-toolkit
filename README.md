@@ -4,21 +4,21 @@ This repository is a monorepo manage with [yarn workspaces](https://classic.yarn
 
 ## Packages
 
-- [pancake-uikit](https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/pancake-uikit) : React components used to build the Pancake UI
-- [eslint-config-pancake](https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/eslint-config-pancake) : An ESLint config for pancake, with Typescript and Prettier support
+- [moondoge-uikit](https://github.com/moondogeswap/moondoge-toolkit/tree/master/packages/moondoge-uikit) : React components used to build the Pancake UI
+- [eslint-config-moondoge](https://github.com/moondogeswap/moondoge-toolkit/tree/master/packages/eslint-config-moondoge) : An ESLint config for moondoge, with Typescript and Prettier support
 
 ## How to use
 
 Clone the repository 
 
 ```
-git clone git@github.com:pancakeswap/pancake-toolkit.git
+git clone git@github.com:moondogeswap/moondoge-toolkit.git
 ```
 
 Run yarn at the root of the workspace
 
 ```
-cd pancake-toolkit
+cd moondoge-toolkit
 yarn
 ```
 

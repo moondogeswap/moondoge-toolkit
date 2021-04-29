@@ -1,5 +1,5 @@
 {
-  "name": "pancake-toolkit",
+  "name": "moondoge-toolkit",
   "version": "1.0.0",
   "description": "Pancake frontend packages",
   "private": true,
@@ -8,13 +8,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pancakeswap/pancake-toolkit.git"
+    "url": "git+https://github.com/moondogeswap/moondoge-toolkit.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pancakeswap/pancake-toolkit/issues"
+    "url": "https://github.com/moondogeswap/moondoge-toolkit/issues"
   },
-  "homepage": "https://github.com/pancakeswap/pancake-toolkit#readme",
+  "homepage": "https://github.com/moondogeswap/moondoge-toolkit#readme",
   "scripts": {
     "build": "lerna run build",
     "test": "lerna run test",
@@ -22,12 +22,6 @@
     "format:check": "lerna run format:check",
     "storybook:build": "lerna run storybook:build",
     "release": "yarn build && yarn lerna publish"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format:check",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
