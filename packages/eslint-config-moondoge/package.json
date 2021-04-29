@@ -1,12 +1,12 @@
 {
-  "name": "@pancakeswap-libs/eslint-config-pancake",
+  "name": "@moondogeswap-libs/eslint-config-moondoge",
   "version": "1.0.1",
   "description": "Eslint config for PancakeSwap",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
-  "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/eslint-config-pancake",
+  "repository": "https://github.com/moondogeswap/moondoge-toolkit/tree/master/packages/eslint-config-moondoge",
   "license": "MIT",
   "author": "RabbitDoge",
   "private": false,
