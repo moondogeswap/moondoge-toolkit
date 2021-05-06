@@ -14,7 +14,7 @@ export default {
 export const Default: React.FC = () => {
   return (
     <NotificationDot show>
-      <Button>Hi</Button>
+      <Button variant="connection">Hover</Button>
     </NotificationDot>
   );
 };

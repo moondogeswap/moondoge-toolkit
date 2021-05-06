@@ -10,12 +10,15 @@ interface StyledInputProps extends InputProps {
  */
 const getBoxShadow = ({ isSuccess = false, isWarning = false, theme }: StyledInputProps) => {
   if (isWarning) {
-    return theme.shadows.warning;
+    // return theme.shadows.warning;
+    return theme.colors.pink;
   }
 
   if (isSuccess) {
-    return theme.shadows.success;
+    return theme.colors.orange;
+    // return theme.shadows.success;
   }
+  return theme.colors.input
 
   return theme.shadows.inset;
 };
@@ -27,8 +30,9 @@ const getHeight = ({ scale = scales.MD }: StyledInputProps) => {
     case scales.LG:
       return "48px";
     case scales.MD:
-    default:
       return "40px";
+    default:
+      return "32px";
   }
 };
 
@@ -36,28 +40,30 @@ const Input = styled.input<InputProps>`
   background-color: ${({ theme }) => theme.colors.input};
   border: 0;
   border-radius: 16px;
-  box-shadow: ${getBoxShadow};
-  color: ${({ theme }) => theme.colors.text};
+  border: 2px solid ${getBoxShadow};
+  color: ${({ theme }) => theme.colors.textSubtle};
   display: block;
   font-size: 16px;
   height: ${getHeight};
   outline: 0;
   padding: 0 16px;
   width: 100%;
+  box-sizing:border-box;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.textSubtle};
+    color: ${({ theme }) => theme.colors.inputPlaceholder};
   }
 
   &:disabled {
-    background-color: ${({ theme }) => theme.colors.backgroundDisabled};
+    background-color: ${({ theme }) => theme.colors.inputDisabled};
     box-shadow: none;
     color: ${({ theme }) => theme.colors.textDisabled};
     cursor: not-allowed;
   }
 
   &:focus:not(:disabled) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    border: 2px solid ${({ theme }) => theme.colors.textSubtle};
+    box-sizing:border-box;
   }
 `;
 

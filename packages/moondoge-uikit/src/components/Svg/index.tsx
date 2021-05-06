@@ -69,5 +69,9 @@ export { default as VolumeOffIcon } from "./Icons/VolumeOff";
 export { default as VolumeUpIcon } from "./Icons/VolumeUp";
 export { default as WarningIcon } from "./Icons/Warning";
 export { default as RefreshIcon } from "./Icons/Refresh";
+export { default as LogoIconDoge } from "./Icons/LogoIcon";
+export { default as LineIcon } from "./Icons/Line";
+export { default as LinkIcon } from "./Icons/Link";
+
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

@@ -9,6 +9,7 @@ interface ThemedButtonProps extends BaseButtonProps {
 
 interface TransientButtonProps extends ThemedButtonProps {
   $isLoading?: boolean;
+  $isVariant?: boolean
 }
 
 const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
@@ -24,13 +25,37 @@ const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
   return `
     &:disabled,
     &.pancake-button--disabled {
-      background-color: ${theme.colors.backgroundDisabled};
+      background: ${theme.colors.backgroundDisabled};
       border-color: ${theme.colors.backgroundDisabled};
       box-shadow: none;
       color: ${theme.colors.textDisabled};
       cursor: not-allowed;
     }
+    &.pancake-button--disabled span{
+      background: #FFFFFF;
+      border: 4px solid #C8C8C8;
+    }
   `;
+};
+
+const getIsVariantStyles = ({ $isVariant, theme }: TransientButtonProps) => {
+  if ($isVariant) {
+    return `
+    width: 490px;
+    height: 88px;
+    background: linear-gradient(133deg, #E9FFE4 0%, #3DFEF1 100%);
+    box-shadow: 0px 6px 36px rgba(24, 194, 188, 0.24) !important;
+    opacity: 1;
+    border-radius: 20px;
+    width:490px;
+    height:88px;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-weight: bold;
+    color: #1A191B !important;
+    `;
+  }
 };
 
 /**
@@ -44,6 +69,7 @@ const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
 };
 
 const StyledButton = styled.button<BaseButtonProps>`
+  ${getIsVariantStyles}
   align-items: center;
   border: 0;
   border-radius: 16px;
@@ -72,12 +98,12 @@ const StyledButton = styled.button<BaseButtonProps>`
 
   ${getDisabledStyles}
   ${variant({
-    prop: "scale",
-    variants: scaleVariants,
-  })}
+  prop: "scale",
+  variants: scaleVariants,
+})}
   ${variant({
-    variants: styleVariants,
-  })}
+  variants: styleVariants,
+})}
   ${layout}
   ${space}
 `;

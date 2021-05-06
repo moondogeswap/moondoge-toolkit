@@ -9,13 +9,19 @@ export const scales = {
 } as const;
 
 export const variants = {
+  CONNECTION: "connection",
   PRIMARY: "primary",
+  DEFAULTICON: "defaultIcon",
+  DEFAULT: "default",
+  SQUARE:"square",
   SECONDARY: "secondary",
   TERTIARY: "tertiary",
   TEXT: "text",
   DANGER: "danger",
   SUBTLE: "subtle",
   SUCCESS: "success",
+  MAX:'max',
+  UnstakeDOGE:"UnstakeDOGE"
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];

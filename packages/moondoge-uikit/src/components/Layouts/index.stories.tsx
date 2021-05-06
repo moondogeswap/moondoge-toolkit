@@ -9,8 +9,8 @@ export default {
 
 const Stub = styled.div`
   width: 100%;
-  background: #1fc7d4;
-  height: 300px;
+  background: #FFB000;
+  height: 400px;
 `;
 
 export const Base: React.FC = () => {

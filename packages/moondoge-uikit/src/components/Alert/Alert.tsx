@@ -26,7 +26,7 @@ const getThemeColor = ({ theme, variant = variants.INFO }: ThemedIconLabel) => {
       return theme.colors.success;
     case variants.INFO:
     default:
-      return theme.colors.secondary;
+      return theme.colors.info;
   }
 };
 
@@ -46,18 +46,19 @@ const getIcon = (variant: AlertProps["variant"] = variants.INFO) => {
 
 const IconLabel = styled.div<ThemedIconLabel>`
   background-color: ${getThemeColor};
-  border-radius: 16px 0 0 16px;
+  border-radius: 10px 0 0 10px;
   color: ${({ theme }) => theme.alert.background};
-  padding: 12px;
+  padding: 10px 6px;
 `;
 
-const withHandlerSpacing = 32 + 12 + 8; // button size + inner spacing + handler position
+// const withHandlerSpacing = 32 + 12 + 8; // button size + inner spacing + handler position
+const withHandlerSpacing = 22; // button size + inner spacing + handler position
 const Details = styled.div<{ hasHandler: boolean }>`
   flex: 1;
-  padding-bottom: 12px;
-  padding-left: 12px;
+  padding-bottom: 10px;
+  padding-left: 26px;
   padding-right: ${({ hasHandler }) => (hasHandler ? `${withHandlerSpacing}px` : "12px")};
-  padding-top: 12px;
+  padding-top: 10px;
 `;
 
 const CloseHandler = styled.div`
@@ -70,8 +71,8 @@ const CloseHandler = styled.div`
 const StyledAlert = styled(Flex)`
   position: relative;
   background-color: ${({ theme }) => theme.alert.background};
-  border-radius: 16px;
-  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.16);
 `;
 
 const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
@@ -89,7 +90,7 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
       {onClick && (
         <CloseHandler>
           <IconButton scale="sm" variant="text" onClick={onClick}>
-            <CloseIcon width="24px" color="currentColor" />
+            <CloseIcon width="24px" />
           </IconButton>
         </CloseHandler>
       )}

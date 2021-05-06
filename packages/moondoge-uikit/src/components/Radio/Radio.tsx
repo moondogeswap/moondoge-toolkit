@@ -5,10 +5,10 @@ import { RadioProps, scales } from "./types";
 const getScale = ({ scale }: RadioProps) => {
   switch (scale) {
     case scales.SM:
-      return "24px";
+      return "20px";
     case scales.MD:
     default:
-      return "32px";
+      return "30px";
   }
 };
 
@@ -18,11 +18,11 @@ const getCheckedScale = ({ scale }: RadioProps) => {
       return "12px";
     case scales.MD:
     default:
-      return "20px";
+      return "22px";
   }
 };
 
-const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
+const Radio = styled.input.attrs({ type: "radio" }) <RadioProps>`
   appearance: none;
   overflow: hidden;
   cursor: pointer;
@@ -32,34 +32,41 @@ const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
   width: ${getScale};
   vertical-align: middle;
   transition: background-color 0.2s ease-in-out;
-  border: 0;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.input};
-  box-shadow: ${({ theme }) => theme.shadows.inset};
-
+  background-color: ${({ theme }) => theme.colors.radioDefault};
+  border: 1px solid ${({ theme }) => theme.colors.publicColor};
   &:after {
     border-radius: 50%;
     content: "";
     height: ${getCheckedScale};
-    left: 6px;
+    left: 4px;
     position: absolute;
-    top: 6px;
+    top: 4px;
     width: ${getCheckedScale};
   }
 
   &:hover:not(:disabled):not(:checked) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    background:${({ theme }) => theme.colors.publicColor};
+    border:none;
+    &:after{
+      background: ${({ theme }) => theme.colors.radioCheck};
+      border: 4px solid ${({ theme }) => theme.colors.orange};
+    }
   }
 
   &:focus {
     outline: none;
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    background:${({ theme }) => theme.colors.publicColor}
+    &:after{
+      border:  4px solid ${({ theme }) => theme.colors.orange};
+    }
   }
 
   &:checked {
-    background-color: ${({ theme }) => theme.colors.success};
+    background-color: ${({ theme }) => theme.colors.orange};
+    border:none;
     &:after {
-      background-color: ${({ theme }) => theme.radio.handleBackground};
+      background: ${({ theme }) => theme.colors.radioCheck};
     }
   }
 

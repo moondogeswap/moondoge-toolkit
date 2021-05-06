@@ -1,8 +1,11 @@
 import { variants, scales } from "./types";
 
 export const styleVariants = {
+  [variants.DEFAULT]: {
+    borderRadius: "5px",
+  },
   [variants.ROUND]: {
-    borderRadius: "32px",
+    borderRadius: "5px",
   },
   [variants.FLAT]: {
     borderRadius: 0,
@@ -11,10 +14,10 @@ export const styleVariants = {
 
 export const styleScales = {
   [scales.MD]: {
-    height: "16px",
+    height: "20px",
   },
   [scales.SM]: {
-    height: "8px",
+    height: "10px",
   },
 };
 

@@ -11,10 +11,17 @@ export default {
 
 export const Image: React.FC = () => {
   return (
-    <div>
-      <Img src="https://via.placeholder.com/800x400" width={800} height={400} alt="test" />
-      <div>Image</div>
-    </div>
+    <>
+      <div style={{ marginBottom: 8 }}>
+        <Img src="https://via.placeholder.com/500x500" width={500} height={500} alt="test" />
+      </div>
+      <div style={{ marginBottom: 8 }}>
+        <Img src="https://via.placeholder.com/1518x140" width={1518} height={140} alt="test" />
+      </div>
+      <div style={{ marginBottom: 8 }}>
+        <Img src="https://via.placeholder.com/1518x352" width={1518} height={352} alt="test" />
+      </div>
+    </>
   );
 };
 

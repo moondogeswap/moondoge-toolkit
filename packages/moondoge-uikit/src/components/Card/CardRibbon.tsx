@@ -7,47 +7,21 @@ interface StyledCardRibbonProps extends CardRibbonProps {
 }
 
 const StyledCardRibbon = styled.div<Partial<StyledCardRibbonProps>>`
-  background-color: ${({ variantColor = "secondary", theme }) => theme.colors[variantColor]};
-  color: white;
-  margin: 0;
-  padding: 0;
-  padding: 8px 0;
+  background: ${({ variantColor = "secondary", theme }) => theme.colors[variantColor]};
+  color:${({ variantColor }) => variantColor === 'white' ? '#A56A46' : '#fff'};
+  padding: 5px 22px;
   position: absolute;
-  right: ${({ ribbonPosition }) => (ribbonPosition === "right" ? 0 : "auto")};
-  top: 0;
+  top:${({ variantColor }) => variantColor === 'white' ? '16px' : '36px'};
+  right:${({ ribbonPosition }) => (ribbonPosition === "right" ? 0 : 'auto')};
+  border-radius: ${({ ribbonPosition }) => (ribbonPosition === "right" ? '50px 0px 0px 50px' : ' 0px 50px 50px 0px;')};
+  left: ${({ ribbonPosition }) => (ribbonPosition === "left" ? 0 : "auto")};
   text-align: center;
-  transform: translateX(30%) translateY(0%) rotate(45deg);
-  transform: ${({ ribbonPosition }) =>
-    ribbonPosition === "right"
-      ? "translateX(30%) translateY(0%) rotate(45deg)"
-      : "translateX(0%) translateY(200%) rotate(-45deg)"};
-  transform-origin: top left;
-  width: 96px;
-
-  &:before,
-  &:after {
-    background-color: ${({ variantColor = "secondary", theme }) => theme.colors[variantColor]};
-    content: "";
-    height: 100%;
-    margin: 0 -1px; /* Removes tiny gap */
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-
-  &:before {
-    right: 100%;
-  }
-
-  &:after {
-    left: 100%;
-  }
+  width:98px;
 
   & > div {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 96px;
   }
 `;
 

@@ -7,7 +7,7 @@ import Alert from "./Alert";
 import { Text } from "../Text";
 
 const Row = styled.div`
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 `;
 
 export default {
@@ -21,22 +21,22 @@ export const Default: React.FC = () => {
     <div style={{ padding: "32px", width: "400px" }}>
       <Row>
         <Alert title="Info">
-          <Text as="p">This is a description</Text>
+          <Text as="p" color="textDesc" small>No provider was found</Text>
         </Alert>
       </Row>
       <Row>
         <Alert title="Success" variant="success">
-          <Text as="p">This is a description</Text>
+          <Text as="p" color="textDesc" small>No provider was found</Text>
         </Alert>
       </Row>
       <Row>
         <Alert title="Warning" variant="warning">
-          <Text as="p">This is a description</Text>
+          <Text as="p" color="textDesc" small> No provider was found</Text>
         </Alert>
       </Row>
       <Row>
         <Alert title="Danger" variant="danger">
-          <Text as="p">This is a description</Text>
+          <Text as="p" color="textDesc" small>No provider was found</Text>
         </Alert>
       </Row>
     </div>
@@ -53,14 +53,14 @@ export const WithHandler: React.FC = () => {
       </Row>
       <Row>
         <Alert onClick={handleClick} title="Success" variant="success">
-          A description of the success alert
+          <Text as="p" color="textDesc" small>No provider was found</Text>
         </Alert>
       </Row>
       <Row>
-        <Alert onClick={handleClick} title="Danger A Long Title" variant="danger" />
+        <Alert onClick={handleClick} title="Warning" variant="warning" />
       </Row>
       <Row>
-        <Alert onClick={handleClick} title="Warning" variant="warning" />
+        <Alert onClick={handleClick} title="Danger A Long Title" variant="danger" />
       </Row>
     </div>
   );

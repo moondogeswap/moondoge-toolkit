@@ -3,15 +3,17 @@ import { CheckboxProps, scales } from "./types";
 
 const getScale = ({ scale }: CheckboxProps) => {
   switch (scale) {
+    case scales.XS:
+      return "14px";
     case scales.SM:
-      return "24px";
+      return "20px";
     case scales.MD:
     default:
-      return "32px";
+      return "30px";
   }
 };
 
-const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
+const Checkbox = styled.input.attrs({ type: "checkbox" }) <CheckboxProps>`
   appearance: none;
   overflow: hidden;
   cursor: pointer;
@@ -22,9 +24,9 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
   vertical-align: middle;
   transition: background-color 0.2s ease-in-out;
   border: 0;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.input};
-  box-shadow: ${({ theme }) => theme.shadows.inset};
+  border-radius: 3px;
+  background-color: ${({ theme }) => theme.colors.checkboxInput};
+  border: 1px solid #FFCE69;
 
   &:after {
     content: "";
@@ -32,27 +34,28 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
     border-bottom: 2px solid;
     border-left: 2px solid;
     border-color: transparent;
-    top: 30%;
+    top: 27%;
     left: 0;
     right: 0;
-    width: 50%;
-    height: 25%;
+    width: 62%;
+    height: 36%;
     margin: auto;
     transform: rotate(-50deg);
     transition: border-color 0.2s ease-in-out;
   }
 
   &:hover:not(:disabled):not(:checked) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    border: ${({ theme }) => '2px solid' + theme.colors.orange};
   }
 
   &:focus {
     outline: none;
-    box-shadow: ${({ theme }) => theme.shadows.focus};
+    box-shadow: ${({ theme }) => theme.colors.orange};
   }
 
   &:checked {
-    background-color: ${({ theme }) => theme.colors.success};
+    background-color: ${({ theme }) => theme.colors.checkboxChecked};
+    border: ${({ theme }) => '2px solid' + theme.colors.orange};
     &:after {
       border-color: white;
     }
