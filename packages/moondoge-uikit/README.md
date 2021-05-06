@@ -1,12 +1,12 @@
 # 🥞 Pancake UIkit
 
-[![Version](https://img.shields.io/npm/v/@moondogeswap-libs/uikit)](https://www.npmjs.com/package/@moondogeswap-libs/uikit) [![Size](https://img.shields.io/bundlephobia/min/@moondogeswap-libs/uikit)](https://www.npmjs.com/package/@moondogeswap-libs/uikit)
+[![Version](https://img.shields.io/npm/v/moondoge-uikit)](https://www.npmjs.com/package/moondoge-uikit) [![Size](https://img.shields.io/bundlephobia/min/moondoge-uikit)](https://www.npmjs.com/package/moondoge-uikit)
 
 Pancake UIkit is a set of React components and hooks used to build pages on Pancake's apps. It also contains a theme file for dark and light mode.
 
 ## Install
 
-`yarn add @moondogeswap-libs/uikit`
+`yarn add moondoge-uikit`
 
 ## Setup
 
@@ -16,7 +16,7 @@ Before using Pancake UIkit, you need to provide the theme file to styled-compone
 
 ```
 import { ThemeProvider } from 'styled-components'
-import { light, dark } from '@moondogeswap-libs/uikit'
+import { light, dark } from 'moondoge-uikit'
 ...
 <ThemeProvider theme={isDark}>...</ThemeProvider>
 ```
@@ -26,7 +26,7 @@ import { light, dark } from '@moondogeswap-libs/uikit'
 A reset CSS is available as a global styled component.
 
 ```
-import { ResetCSS } from '@moondogeswap-libs/uikit'
+import { ResetCSS } from 'moondoge-uikit'
 ...
 <ResetCSS />
 ```
