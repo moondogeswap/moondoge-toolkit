@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { space } from "styled-system";
 import ChevronRightIcon from "../Svg/Icons/ChevronRight";
 import { BreadcrumbsProps } from "./types";
+import { ArrowRight } from "../Svg"
 
 const Separator = styled.div`
   align-items: center;
@@ -19,8 +20,8 @@ const Separator = styled.div`
   }
 
   ${({ theme }) => theme.mediaQueries.md} {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 `;
 
@@ -49,7 +50,7 @@ const insertSeparators = (items: ReactNode[], separator: BreadcrumbsProps["separ
     ];
   }, []);
 
-const DefaultSeparator = <ChevronRightIcon color="currentColor" width="24px" />;
+const DefaultSeparator = <ArrowRight color="linArrowRight" width="24px" />;
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ separator = DefaultSeparator, children }) => {
   const validItems = Children.toArray(children).filter((child) => isValidElement(child));

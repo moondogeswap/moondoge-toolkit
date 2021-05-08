@@ -6,14 +6,22 @@ import { StatusProps, StepProps } from "./types";
 
 const getStepNumberFontColor = ({ theme, status }: StatusProps) => {
   if (status === "past") {
-    return theme.colors.success;
+    return theme.colors.white;
   }
   if (status === "current") {
-    return theme.colors.invertedContrast;
+    return theme.colors.publicColor;
   }
-  return theme.colors.textDisabled;
+  return '#201F1E';
 };
-
+const getStepNumberBkColor = ({ theme, status }: StatusProps) => {
+  if (status === "past") {
+    return 'linear-gradient(180deg, #DFBC70 0%, #B88513 100%);';
+  }
+  if (status === "current") {
+    return 'linear-gradient(180deg, #FEF6E3 0%, #FEC23D 100%);';
+  }
+  return '#fff';
+};
 const StyledStep = styled(Flex)`
   ${({ theme }) => theme.mediaQueries.md} {
     justify-content: center;
@@ -26,10 +34,10 @@ const Connector = styled.div<StatusProps>`
   height: 100%;
   top: 50%;
   left: calc(50% - 2px);
-  background-color: ${({ theme, status }) => theme.colors[status === "past" ? "success" : "textDisabled"]};
+  background: ${({ theme, status }) => status === "past" ? "linear-gradient(180deg, #DFBC70 0%, #B88513 100%);" : "#FCE1BF"};
 `;
 
-const ChildrenWrapper = styled(Box)<{ isVisible: boolean }>`
+const ChildrenWrapper = styled(Box) <{ isVisible: boolean }>`
   ${({ theme }) => theme.mediaQueries.md} {
     visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
   }
@@ -58,8 +66,8 @@ const Wrapper = styled.div`
 
 export const StepNumber = styled.div<StatusProps>`
   box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);
-  background-color: ${({ theme, status }) => theme.colors[status === "current" ? "secondary" : "invertedContrast"]};
-  border: 2px solid ${({ theme, status }) => (status === "past" ? theme.colors.success : "transparent")};
+  background: ${getStepNumberBkColor} ;
+  border: ${({ theme, status }) => (["past", "current"].includes(status) ? 'transparent' : "2px solid #FFE7D8")};
   border-radius: ${({ theme }) => theme.radii.circle};
   color: ${getStepNumberFontColor};
   display: flex;

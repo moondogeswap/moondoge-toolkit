@@ -59,6 +59,7 @@ const useProps = () => {
 
 export const Connected: React.FC = () => {
   const props = useProps();
+  console.log(props, 'props====')
   return (
     <BrowserRouter>
       <Menu {...props}>

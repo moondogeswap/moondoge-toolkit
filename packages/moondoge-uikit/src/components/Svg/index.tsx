@@ -72,6 +72,11 @@ export { default as RefreshIcon } from "./Icons/Refresh";
 export { default as LogoIconDoge } from "./Icons/LogoIcon";
 export { default as LineIcon } from "./Icons/Line";
 export { default as LinkIcon } from "./Icons/Link";
+export { default as CloseIconNew } from "./Icons/CloseIcon";
+export { default as ArrowRight } from "./Icons/ArrowRight";
+export { default as Top } from "./Icons/Top";
+export { default as LineDown } from "./Icons/LineDown";
+
 
 export { default as Svg } from "./Svg";
 export type { SvgProps } from "./types";

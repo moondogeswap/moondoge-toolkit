@@ -14,35 +14,40 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.Injected,
   },
   {
-    title: "TrustWallet",
-    icon: TrustWallet,
-    connectorId: ConnectorNames.Injected,
+    title: "VisionWallet",
+    icon: WalletConnect,
+    connectorId: ConnectorNames.WalletConnect,
   },
-  {
-    title: "MathWallet",
-    icon: MathWallet,
-    connectorId: ConnectorNames.Injected,
-  },
-  {
-    title: "TokenPocket",
-    icon: TokenPocket,
-    connectorId: ConnectorNames.Injected,
-  },
+  // {
+  //   title: "TrustWallet",
+  //   icon: TrustWallet,
+  //   connectorId: ConnectorNames.Injected,
+  // },
+  // {
+  //   title: "MathWallet",
+  //   icon: MathWallet,
+  //   connectorId: ConnectorNames.Injected,
+  // },
+  // {
+  //   title: "TokenPocket",
+  //   icon: TokenPocket,
+  //   connectorId: ConnectorNames.Injected,
+  // },
   {
     title: "WalletConnect",
     icon: WalletConnect,
     connectorId: ConnectorNames.WalletConnect,
   },
-  {
-    title: "Binance Chain Wallet",
-    icon: BinanceChain,
-    connectorId: ConnectorNames.BSC,
-  },
-  {
-    title: "SafePal Wallet",
-    icon: SafePalWallet,
-    connectorId: ConnectorNames.Injected,
-  },
+  // {
+  //   title: "Binance Chain Wallet",
+  //   icon: BinanceChain,
+  //   connectorId: ConnectorNames.BSC,
+  // },
+  // {
+  //   title: "SafePal Wallet",
+  //   icon: SafePalWallet,
+  //   connectorId: ConnectorNames.Injected,
+  // },
 ];
 
 export default connectors;

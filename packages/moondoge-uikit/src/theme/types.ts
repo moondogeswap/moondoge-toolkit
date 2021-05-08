@@ -86,7 +86,20 @@ export type Colors = {
   radioDefault:string;
   radioCheck:string;
   progressBk:string;
-  skeletonDefault:string
+  skeletonDefault:string;
+  stepMenuColor:string;
+  stepMenuBkColor:string;
+  stepScaleColor:string;
+  tooTipBkColor: string;
+  tooTipFontColor:string;
+  linkADefault:string;
+  linkACurrent:string;
+  linkAH:string;
+  linArrowRight:string;
+  lineDownBk:string;
+  lightDark:string;
+  radioBk:string;
+  toggleDot:string
 };
 
 export type ZIndices = {

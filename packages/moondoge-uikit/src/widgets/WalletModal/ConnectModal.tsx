@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "../../components/Link";
-import { HelpIcon } from "../../components/Svg";
+import { HelpIcon, CloseIconNew } from "../../components/Svg";
 import { Modal } from "../Modal";
 import WalletCard from "./WalletCard";
 import config from "./config";
 import { Login } from "./types";
+import { Text } from "../../components/Text";
 
 interface Props {
   login: Login;
@@ -34,8 +35,8 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
       href="https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain"
       external
     >
-      <HelpIcon color="primary" mr="6px" />
-      Learn how to connect
+      <HelpIcon color="#EC915A" mr="3px" />
+      <Text color="#EC915A" fontSize="20px">Learn how to connect</Text>
     </HelpLink>
   </Modal>
 );

@@ -4,11 +4,12 @@ import { BrowserRouter, Link } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
-import { AddIcon, AutoRenewIcon, LogoIconDoge, LineIcon } from "../Svg";
+import { AddIcon, AutoRenewIcon, LogoIconDoge, LineIcon, Top, LineDown } from "../Svg";
 import IconButton from "./IconButton";
 import Button from "./Button";
 import { ExpandableButton, ExpandableLabel } from "./ExpandableButton";
 import { scales, variants } from "./types";
+import Text from "../Text/Text"
 export default {
   title: "Components/Button",
   component: Button,
@@ -268,12 +269,20 @@ export const Variants: React.FC = () => {
           </IconButton>
         </Row>
         <Row>
-          <IconButton scale="sm" variant="danger">
-            <LogoIconDoge />
-          </IconButton>
-          <IconButton scale="sm" variant="success">
-            <AddIcon color="currentColor" />
-          </IconButton>
+          <Button scale="sm" variant="top">
+            <Top color="publicColor" />
+          </Button>
+          <Button scale="sm" variant="top">
+            <Top color="orange" />
+          </Button>
+        </Row>
+        <Row>
+          <Button scale="sm" variant="down">
+            <LineDown color="publicColor" />
+          </Button>
+          <Button scale="sm" variant="down">
+            <AddIcon color="orange" width="14" />
+          </Button>
         </Row>
       </BrowserRouter>
     </Box>
@@ -288,7 +297,7 @@ export const Expandable: React.FC = () => {
         <Row>
           <ExpandableButton expanded={expanded} onClick={() => setExpanded((prev) => !prev)} />
           <ExpandableLabel expanded={expanded} onClick={() => setExpanded((prev) => !prev)}>
-            Details
+            <Text color="lightDark">Details</Text>
           </ExpandableLabel>
         </Row>
       </BrowserRouter>

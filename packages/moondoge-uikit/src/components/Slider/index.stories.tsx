@@ -84,13 +84,13 @@ export const Balance: React.FC = () => {
 
           return <Button scale="sm" variant="secondary" onClick={handleClick}>{`${percent}%`}</Button>;
         })}
-        <Button scale="sm" variant="secondary" onClick={setMax}>
+        <Button scale="sm" variant="connection" onClick={setMax}>
           Max
         </Button>
       </Flex>
       <Text>{`Current Balance: ${balance}`}</Text>
-      <Text fontSize="12px" color="textSubtle">{`Initial Balance: ${initialBalance}`}</Text>
-      <Text fontSize="12px" color="textSubtle">{`Max Balance: ${maxBalance}`}</Text>
+      <Text fontSize="16px" color="orange">{`Initial Balance: ${initialBalance}`}</Text>
+      <Text fontSize="16px" color="orange">{`Max Balance: ${maxBalance}`}</Text>
     </Box>
   );
 };

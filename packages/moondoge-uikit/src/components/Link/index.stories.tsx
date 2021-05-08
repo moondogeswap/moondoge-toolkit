@@ -38,7 +38,7 @@ export const Default: React.FC = () => {
       <div>
         <Link href="/">
           With icon
-          <LogoIconDoge />
+          <LogoIconDoge width="15" />
         </Link>
       </div>
       <div>

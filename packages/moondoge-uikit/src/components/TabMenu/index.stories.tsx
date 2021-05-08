@@ -47,6 +47,13 @@ export const Default: React.FC = () => {
           <Tab>Medium length</Tab>
         </TabMenu>
       </Row>
+      <Row>
+        <TabMenu activeIndex={index3} onItemClick={handleClick3} scale="md">
+          <Tab scale="md">Home</Tab>
+          <Tab scale="md">Farms</Tab>
+          <Tab scale="md">Pools</Tab>
+        </TabMenu>
+      </Row>
     </>
   );
 };

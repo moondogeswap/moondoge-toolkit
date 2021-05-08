@@ -29,7 +29,7 @@ export const Default: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu activeIndex={index} onItemClick={handleClick} variant="subtle">
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -37,7 +37,7 @@ export const Default: React.FC = () => {
         </ButtonMenu>
       </Row>
       <Row>
-        <ButtonMenu activeIndex={index1} onItemClick={handleClick1} scale="sm">
+        <ButtonMenu activeIndex={index1} onItemClick={handleClick1} scale="sm" variant="subtle">
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
@@ -67,8 +67,8 @@ export const Default: React.FC = () => {
 export const AsLinks: React.FC = () => {
   return (
     <Row>
-      <ButtonMenu activeIndex={0}>
-        <ButtonMenuItem as="a" href="https://pancakeswap.finance">
+      <ButtonMenu activeIndex={0} variant="subtle">
+        <ButtonMenuItem as="a" href="https://pancakeswap.finance" >
           Link 1
         </ButtonMenuItem>
         <ButtonMenuItem as="a" href="https://pancakeswap.finance">

@@ -10,6 +10,9 @@ import UserBlock from "./components/UserBlock";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import LogoDoge from "./icons/LogoDoge.png"
+import TabMenu from "../../components/TabMenu/TabMenu";
+import Tab from "../../components/TabMenu/Tab";
 
 const Wrapper = styled.div`
   position: relative;
@@ -80,6 +83,8 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
+  const [index, setIndex] = useState(0);
+  const handleClick = (newIndex: number) => setIndex(newIndex);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,10 +117,15 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
+  console.log(links, 'links')
 
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
+        {/* <img src={LogoDoge} alt="" />
+        <TabMenu activeIndex={index} scale="md" onItemClick={handleClick}>
+          {links.map(link => <Tab scale="md" key={link.label}>{link.label}</Tab>)}
+        </TabMenu> */}
         <Logo
           isPushed={isPushed}
           togglePush={() => setIsPushed((prevState: boolean) => !prevState)}

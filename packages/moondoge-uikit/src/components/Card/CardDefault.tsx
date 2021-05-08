@@ -33,10 +33,11 @@ const getStyles = ({ type, theme }: CardDefaultProps) => {
 
 const CardDefault = styled.div<CardDefaultProps>`
   width: 230px;
-  height: 100px;
+  min-height:100px ;
   opacity: 1;
   border-radius: 20px;
   margin-bottom :40px;
+  overflow: hidden;
   ${getStyles},
   ${space}
 `;

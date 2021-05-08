@@ -5,6 +5,7 @@ import { Step, StepNumber } from "./Step";
 import { Status } from "./types";
 import Card from "../Card/Card";
 import CardBody from "../Card/CardBody";
+import CardDefault from "../Card/CardDefault";
 
 export default {
   title: "Components/Stepper",
@@ -60,7 +61,7 @@ export const Components: React.FC = () => {
       </Row>
       <Row>
         <Step index={1} status="current">
-          <Card>
+          <CardDefault type="default">
             <CardBody>
               <h2>Step 1</h2>
               <div>
@@ -69,7 +70,7 @@ export const Components: React.FC = () => {
                 finibus neque. Phasellus consequat at lorem a venenatis.
               </div>
             </CardBody>
-          </Card>
+          </CardDefault>
         </Step>
       </Row>
       <Row>

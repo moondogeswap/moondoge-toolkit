@@ -65,7 +65,6 @@ export const styleVariants = {
     boxShadow: "none",
     color: "#A56A46",
     borderRadius:'22px',
-    width:'65px',
     height:'33px',
     fontSize: '18px',
     ":hover": {
@@ -73,6 +72,20 @@ export const styleVariants = {
       color:'#fff',
       opacity:1,
     },
+  },
+  [variants.TOP]: {
+    boxShadow: "0px 3px 6px rgba(178, 101, 43, 0.16);",
+    borderRadius:'5px',
+    width:'44px',
+    height:'44px',
+    background:'transparent'
+  },
+  [variants.DOWN]: {
+    boxShadow: "none",
+    borderRadius:'50%',
+    width:'30px',
+    height:'30px',
+    backgroundColor:'lineDownBk'
   },
   [variants.UnstakeDOGE]: {
     backgroundColor: "#EEEEEE ",

@@ -30,7 +30,7 @@ export const MenuButtons: React.FC = () => {
   const handleClick = (newIndex) => setIndex(newIndex);
   return (
     <Row>
-      <ButtonMenu activeIndex={index} onItemClick={handleClick}>
+      <ButtonMenu activeIndex={index} onItemClick={handleClick} variant="subtle">
         <NotificationDot show={index === 0}>
           <ButtonMenuItem>Button 1</ButtonMenuItem>
         </NotificationDot>
