@@ -44,10 +44,10 @@ export const Default: React.FC = () => {
       <Text>Default</Text>
       <Text bold>Bold text</Text>
       <Text small>Small text</Text>
-      <Text fontSize="24px">Custom fontsize</Text>
-      <Text color="red">Custom color</Text>
-      <Text color="primary">Custom color from theme</Text>
-      <Text color="secondary" textTransform="uppercase">
+      <Text fontSize="24px" color="publicColor">Custom fontsize</Text>
+      <Text color="pink" fontSize="14px">Custom color</Text>
+      <Text color="publicColor">Custom color from theme</Text>
+      <Text color="orange" textTransform="uppercase">
         with text transform
       </Text>
       <Text textAlign="center">center</Text>

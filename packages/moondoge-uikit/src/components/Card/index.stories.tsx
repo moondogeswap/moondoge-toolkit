@@ -8,6 +8,8 @@ import UIKitCardHeader from "./CardHeader";
 import CardBody from "./CardBody";
 import CardFooter from "./CardFooter";
 import Card from "./Card";
+import CardDefault from "./CardDefault"
+import Flex from "../Box/Flex";
 
 const Row = styled.div`
   margin-bottom: 32px;
@@ -20,13 +22,22 @@ export default {
 } as Meta;
 
 export const Default: React.FC = () => {
+  const defaultData = ["default", "defaultYellow", "defaultWhite", "primary",
+    'borderG',
+    'success',
+    'borderY',
+    'purple',
+    'light',
+    'green',
+    'grey',
+    'lineSquare',
+    'darkGrey',
+
+  ]
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <Row>
-        <Card>
-          <CardBody>Body</CardBody>
-          <CardFooter>Footer</CardFooter>
-        </Card>
+        {defaultData.map((val, n) => <CardDefault mt="6px" key={n} type={val} />)}
       </Row>
       <Row>
         <Card isActive>
@@ -61,8 +72,16 @@ export const CardHeader: React.FC = () => {
     <div style={{ padding: "32px", width: "500px" }}>
       <Row>
         <Card>
-          <UIKitCardHeader>
-            <Heading size="xl">Card Header</Heading>
+          <UIKitCardHeader variant="defaultY">
+            <Heading size="xl"></Heading>
+          </UIKitCardHeader>
+          <CardBody></CardBody>
+        </Card>
+      </Row>
+      <Row>
+        <Card>
+          <UIKitCardHeader variant="darkY">
+            <Heading size="xl"></Heading>
           </UIKitCardHeader>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
@@ -70,8 +89,8 @@ export const CardHeader: React.FC = () => {
       </Row>
       <Row>
         <Card>
-          <UIKitCardHeader variant="blue">
-            <Heading size="xl">Card Header</Heading>
+          <UIKitCardHeader variant="darkSuccess">
+            <Heading size="xl"></Heading>
           </UIKitCardHeader>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
@@ -79,8 +98,17 @@ export const CardHeader: React.FC = () => {
       </Row>
       <Row>
         <Card>
-          <UIKitCardHeader variant="violet">
-            <Heading size="xl">Card Header</Heading>
+          <UIKitCardHeader variant="darkPurple">
+            <Heading size="xl"></Heading>
+          </UIKitCardHeader>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+      </Row>
+      <Row>
+        <Card>
+          <UIKitCardHeader variant="darkGreen">
+            <Heading size="xl"></Heading>
           </UIKitCardHeader>
           <CardBody>Body</CardBody>
           <CardFooter>Footer</CardFooter>
@@ -93,29 +121,29 @@ export const Ribbon: React.FC = () => {
   return (
     <div style={{ padding: "32px", width: "500px" }}>
       <Row>
-        <Card ribbon={<CardRibbon text="Ribbon" />}>
-          <div style={{ height: "112px", backgroundColor: "#191326" }} />
-          <CardBody style={{ height: "150px" }}>Body</CardBody>
+        <Card ribbon={<CardRibbon variantColor="white" text="Label" />}>
+          <div style={{ height: "50px", background: "linear-gradient(180deg, #FEF6E3 0%, #FEC23D 100%)" }} />
+          <CardBody style={{ height: "100px" }}></CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="textDisabled" text="Ribbon with Long Text" />}>
-          <CardBody style={{ height: "150px" }}>Ribbons will truncate when text is too long</CardBody>
+        <Card ribbon={<CardRibbon variantColor="gray" text="Ribbon with Long Text" />}>
+          <CardBody style={{ height: "100px" }}></CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="success" text="Success" />}>
-          <CardBody style={{ height: "150px" }}>Card</CardBody>
+        <Card ribbon={<CardRibbon variantColor="orange" text="Success" />}>
+          <CardBody style={{ height: "100px" }}></CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="failure" text="Failure" />}>
-          <CardBody style={{ height: "150px" }}>Any Color in the theme</CardBody>
+        <Card ribbon={<CardRibbon variantColor="purple" text="Failure" />}>
+          <CardBody style={{ height: "100px" }}></CardBody>
         </Card>
       </Row>
       <Row>
-        <Card ribbon={<CardRibbon variantColor="failure" text="Failure" ribbonPosition="left" />}>
-          <CardBody style={{ height: "150px" }}>Any Color in the theme</CardBody>
+        <Card ribbon={<CardRibbon variantColor="purple" text="Failure" ribbonPosition="left" />}>
+          <CardBody style={{ height: "100px" }}></CardBody>
         </Card>
       </Row>
     </div>

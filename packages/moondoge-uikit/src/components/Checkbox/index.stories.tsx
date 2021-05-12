@@ -10,11 +10,10 @@ export default {
 export const Default: React.FC = () => {
   return (
     <>
-      <div style={{ marginBottom: "32px" }}>
-        <Checkbox />
-      </div>
       <div>
+        <Checkbox />
         <Checkbox scale="sm" />
+        <Checkbox scale="xs" />
       </div>
     </>
   );

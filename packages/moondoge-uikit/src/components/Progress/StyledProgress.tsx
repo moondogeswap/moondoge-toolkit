@@ -11,7 +11,7 @@ export const Bar = styled.div<BarProps>`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: ${(props) => (props.primary ? props.theme.colors.secondary : `${props.theme.colors.secondary}80`)};
+  background-color: ${(props) => (props.primary ? props.theme.colors.publicColor : `${props.theme.colors.publicColor}80`)};
   height: 100%;
   transition: width 200ms ease;
 `;
@@ -27,22 +27,21 @@ interface StyledProgressProps {
 
 const StyledProgress = styled.div<StyledProgressProps>`
   position: relative;
-  background-color: ${({ theme }) => theme.colors.input};
+  background-color: ${({ theme }) => theme.colors.progressBk};
   box-shadow: ${({ theme }) => theme.shadows.inset};
   overflow: hidden;
 
   ${Bar} {
-    border-top-left-radius: ${({ variant }) => (variant === variants.FLAT ? "0" : "32px")};
-    border-bottom-left-radius: ${({ variant }) => (variant === variants.FLAT ? "0" : "32px")};
+    border-radius: ${({ variant }) => (variant === variants.FLAT ? "0" : "5px")};
   }
 
   ${StyledSystemVariant({
-    variants: styleVariants,
-  })}
+  variants: styleVariants,
+})}
   ${StyledSystemVariant({
-    prop: "scale",
-    variants: styleScales,
-  })}
+  prop: "scale",
+  variants: styleScales,
+})}
   ${space}
 `;
 

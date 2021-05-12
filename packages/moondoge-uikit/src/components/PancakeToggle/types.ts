@@ -15,10 +15,12 @@ export type Scales = typeof scales[keyof typeof scales];
 export interface PancakeToggleProps extends InputHTMLAttributes<HTMLInputElement> {
   scale?: Scales;
   checked?: boolean;
+  bk?: string
 }
 
 export interface HandleProps {
   scale: Scales;
+  bk?: string;
 }
 
 export interface InputProps {
@@ -43,6 +45,8 @@ export const scaleKeys = {
   butterSmearOneLeft: "butterSmearOneLeft",
   butterSmearTwoTop: "butterSmearTwoTop",
   butterSmearTwoRight: "butterSmearTwoRight",
+  circleSize:"circleSize",
+  circleMargin:"circleMargin"
 } as const;
 
 export type ScaleKeys = typeof scaleKeys[keyof typeof scaleKeys];

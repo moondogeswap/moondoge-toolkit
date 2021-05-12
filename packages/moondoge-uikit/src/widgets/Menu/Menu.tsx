@@ -6,10 +6,12 @@ import Flex from "../../components/Box/Flex";
 import { useMatchBreakpoints } from "../../hooks";
 import Logo from "./components/Logo";
 import Panel from "./components/Panel";
+import PanelTabMenu from "./components/PanelTabMenu"
 import UserBlock from "./components/UserBlock";
 import { NavProps } from "./types";
 import Avatar from "./components/Avatar";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import LogoDoge from "./icons/LogoDoge.png"
 
 const Wrapper = styled.div`
   position: relative;
@@ -24,14 +26,15 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 16px;
+  padding-left: 40px;
+  padding-right: 40px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: solid 2px rgba(133, 133, 133, 0.1);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.navBorderColor};
   z-index: 20;
   transform: translate3d(0, 0, 0);
+  box-sizing:border-box;
 `;
 
 const BodyWrapper = styled.div`
@@ -50,6 +53,14 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
     margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
     max-width: ${({ isPushed }) => `calc(100% - ${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px)`};
   }
+`;
+
+const InnerBox = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+  flex-grow: 1;
+  margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
+  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate3d(0, 0, 0);
+  max-width: 100%;
 `;
 
 const MobileOnlyOverlay = styled(Overlay)`
@@ -80,6 +91,8 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(!isMobile);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
+  const [index, setIndex] = useState(0);
+  const handleClick = (newIndex: number) => setIndex(newIndex);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,19 +129,10 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
-        <Logo
-          isPushed={isPushed}
-          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
-          isDark={isDark}
-          href={homeLink?.href ?? "/"}
-        />
-        <Flex>
-          <UserBlock account={account} login={login} logout={logout} />
-          {profile && <Avatar profile={profile} />}
-        </Flex>
-      </StyledNav>
-      <BodyWrapper>
-        <Panel
+        <a href={homeLink?.href ?? "/"}>
+          <img src={LogoDoge} alt="" />
+        </a>
+        <PanelTabMenu
           isPushed={isPushed}
           isMobile={isMobile}
           showMenu={showMenu}
@@ -141,9 +145,35 @@ const Menu: React.FC<NavProps> = ({
           pushNav={setIsPushed}
           links={links}
         />
-        <Inner isPushed={isPushed} showMenu={showMenu}>
+
+        {/* <Logo
+          isPushed={isPushed}
+          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+          isDark={isDark}
+          href={homeLink?.href ?? "/"}
+        /> */}
+        <Flex>
+          <UserBlock account={account} login={login} logout={logout} />
+          {profile && <Avatar profile={profile} />}
+        </Flex>
+      </StyledNav>
+      <BodyWrapper>
+        {/* <Panel
+          isPushed={isPushed}
+          isMobile={isMobile}
+          showMenu={showMenu}
+          isDark={isDark}
+          toggleTheme={toggleTheme}
+          langs={langs}
+          setLang={setLang}
+          currentLang={currentLang}
+          cakePriceUsd={cakePriceUsd}
+          pushNav={setIsPushed}
+          links={links}
+        /> */}
+        <InnerBox isPushed={isPushed} showMenu={showMenu}>
           {children}
-        </Inner>
+        </InnerBox>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
       </BodyWrapper>
     </Wrapper>

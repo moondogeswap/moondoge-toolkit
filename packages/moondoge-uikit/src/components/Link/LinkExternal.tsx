@@ -1,13 +1,14 @@
 import React from "react";
 import Link from "./Link";
 import { LinkProps } from "./types";
+import { LinkIcon } from "../Svg"
 import OpenNewIcon from "../Svg/Icons/OpenNew";
 
 const LinkExternal: React.FC<LinkProps> = ({ children, ...props }) => {
   return (
     <Link external {...props}>
       {children}
-      <OpenNewIcon color="primary" ml="4px" />
+      <LinkIcon color="publicColor" width="16px" ml="4px" />
     </Link>
   );
 };

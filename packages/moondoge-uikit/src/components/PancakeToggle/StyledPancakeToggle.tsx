@@ -12,20 +12,22 @@ const scaleKeyValues = {
     pancakeThreeOffset: "-3px", // so pancake 2 and 3 are shifted a little bit
     butterTop: "3px", // Fine adjustments for butter position
     butterLeft: "10px",
-    butterWidth: "6px", // Widht and
-    butterHeight: "5px", // Height of a butter block on top of pancakes
+    butterWidth: "48px", // Widht and
+    butterHeight: "24px", // Height of a butter block on top of pancakes
     butterThickness: "0.5px", // Shadow on the bottom of the butter block
     butterRadius: "2px", // Rounded corners for the butter
     butterSmearOneTop: "10px", // There is melted butter
     butterSmearOneLeft: "2.5px", // next to the butter block
     butterSmearTwoTop: "11px", // implemented with :before and :after
     butterSmearTwoRight: "2.5px", // these values adjust the position of it
+    circleSize: "16px",
+    circleMargin: "2px"
   },
   md: {
     pancakeSize: "32px",
-    travelDistance: "34px",
-    toggleHeight: "40px",
-    toggleWidth: "72px",
+    travelDistance: "54px",
+    toggleHeight: "36px",
+    toggleWidth: "90px",
     pancakeThickness: "2px",
     pancakeTwoOffset: "-3px",
     pancakeThreeOffset: "-8px",
@@ -39,6 +41,8 @@ const scaleKeyValues = {
     butterSmearOneLeft: "5px",
     butterSmearTwoTop: "22px",
     butterSmearTwoRight: "5px",
+    circleSize: "30px",
+    circleMargin: "3px"
   },
 };
 
@@ -50,12 +54,18 @@ export const PancakeStack = styled.div<HandleProps>`
   position: relative;
   display: inline-block;
 
+
   &:label:before {
     content: none;
   }
 
   .pancakes {
     transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: ${getScale("circleSize")};
+    height: ${getScale("circleSize")};
+    border-radius: 50%;
+    background:${({ bk }) => bk ? '#fff' : '#A56A46'};
+    margin:${getScale("circleMargin")};
   }
 
   .pancake {
@@ -71,7 +81,7 @@ export const PancakeStack = styled.div<HandleProps>`
   }
 
   .pancake:nth-child(1) {
-    background: ${({ theme }) => theme.pancakeToggle.handleBackground};
+    background: ${({ theme }) => theme.colors.radioCheck};
     box-shadow: 0 ${getScale("pancakeThickness")} 0 ${getScale("pancakeThickness")}
       ${({ theme }) => theme.pancakeToggle.handleShadow};
   }
@@ -164,8 +174,7 @@ export const PancakeInput = styled.input<InputProps>`
 export const PancakeLabel = styled.label<PancakeToggleProps>`
   width: ${getScale("toggleWidth")};
   height: ${getScale("toggleHeight")};
-  background: ${({ theme, checked }) => theme.colors[checked ? "success" : "input"]};
-  box-shadow: ${({ theme }) => theme.shadows.inset};
+  background: ${({ theme, checked, bk }) => bk ? bk : theme.colors.radioDefault};
   display: inline-block;
   border-radius: 50px;
   position: relative;

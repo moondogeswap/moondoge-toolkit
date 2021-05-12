@@ -12,6 +12,11 @@ export const light: CardTheme = {
     default: lightColors.gradients.cardHeader,
     blue: lightColors.gradients.blue,
     violet: lightColors.gradients.violet,
+    defaultY:lightColors.gradients.defaultY,
+    darkY:lightColors.gradients.darkY,
+    darkSuccess:lightColors.gradients.darkSuccess,
+    darkPurple:lightColors.gradients.darkPurple,
+    darkGreen:lightColors.gradients.darkGreen,
   },
   dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };
@@ -26,6 +31,11 @@ export const dark: CardTheme = {
     default: darkColors.gradients.cardHeader,
     blue: darkColors.gradients.blue,
     violet: darkColors.gradients.violet,
+    defaultY:darkColors.gradients.defaultY,
+    darkY:darkColors.gradients.darkY,
+    darkSuccess:darkColors.gradients.darkSuccess,
+    darkPurple:darkColors.gradients.darkPurple,
+    darkGreen:darkColors.gradients.darkGreen,
   },
   dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };

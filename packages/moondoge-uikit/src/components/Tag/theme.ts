@@ -15,24 +15,24 @@ export const scaleVariants = {
 
 export const styleVariants = {
   [variants.PRIMARY]: {
-    backgroundColor: "primary",
+    backgroundColor: "publicColor",
   },
   [variants.SECONDARY]: {
-    backgroundColor: "secondary",
+    backgroundColor: "blue",
   },
   [variants.SUCCESS]: {
     backgroundColor: "success",
   },
   [variants.TEXTDISABLED]: {
-    backgroundColor: "textDisabled",
+    backgroundColor: "gray",
   },
   [variants.TEXTSUBTLE]: {
-    backgroundColor: "textSubtle",
+    backgroundColor: "tagSubtle",
   },
   [variants.BINANCE]: {
-    backgroundColor: "binance",
+    backgroundColor: "orange",
   },
   [variants.FAILURE]: {
-    backgroundColor: "failure",
+    backgroundColor: "pink",
   },
 };

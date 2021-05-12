@@ -12,10 +12,10 @@ const GridCell = styled.div`
 `;
 
 const ReferenceElement = styled.div`
-  background-color: #1fc7d4;
-  width: 160px;
-  height: 160px;
-  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.orange};
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
 `;
 
 const Container = styled.div`
@@ -26,16 +26,15 @@ const Container = styled.div`
 `;
 
 const ExpandableCard = styled.div`
-  width: 300px;
+  width: 490px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 20px 30px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: rgba(70, 70, 80, 0.2) 0px 7px 29px 0px;
+  border-radius: 20px;
+  box-shadow:  0px 12px 36px rgba(0, 0, 0, 0.24);
 `;
 
 const ExpandableHeader = styled.div`
-  height: 40px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -198,7 +197,7 @@ export const EventPropagationAndMobile: React.FC = () => {
         <ExpandableHeader>
           On click {showExpandedClick ? "▴" : "▾"}
           <span ref={targetRefClick}>
-            <HelpIcon />
+            <HelpIcon color="#B8B8B8" />
           </span>
         </ExpandableHeader>
         {showExpandedClick && (
@@ -265,38 +264,38 @@ export const Flipping: React.FC = () => {
 
 export const ScreenEdges: React.FC = () => {
   const { targetRef: targetRefLeft, tooltip: tooltipLeft, tooltipVisible: leftVisible } = useTooltip(
-    "I should not touch the edge of the screen",
+    "Default Text",
     "top",
     "click"
   );
   const { targetRef: targetRefRight, tooltip: tooltipRight, tooltipVisible: rightVisible } = useTooltip(
-    "I should not touch the edge of the screen",
+    "Default Text",
     "top",
     "click"
   );
   const { targetRef: targetRefMiddle, tooltip: tooltipMiddle, tooltipVisible: middleVisible } = useTooltip(
-    "I should not touch the edge of the screen",
+    "Default Text",
     "top",
     "click"
   );
   return (
     <div style={{ padding: "16px", height: "800px", backgroundColor: "#EEE" }}>
-      <Text>
+      <Text color="publicColor">
         This story can be used to visually tooltip behavior when the target element is positioned close to the screen
         edge. Open this screen on the phone or in browser with responsive mode. Tooltips should not touch the screen
         edge.
       </Text>
       <div style={{ display: "flex", justifyContent: "space-between", padding: "24px" }}>
         <span ref={targetRefLeft}>
-          <HelpIcon />
+          <HelpIcon color="publicColor" />
         </span>
         {leftVisible && tooltipLeft}
         <span ref={targetRefMiddle}>
-          <HelpIcon />
+          <HelpIcon color="publicColor" />
         </span>
         {middleVisible && tooltipMiddle}
         <span ref={targetRefRight}>
-          <HelpIcon />
+          <HelpIcon color="publicColor" />
         </span>
         {rightVisible && tooltipRight}
       </div>

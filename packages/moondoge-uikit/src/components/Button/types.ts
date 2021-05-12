@@ -9,13 +9,22 @@ export const scales = {
 } as const;
 
 export const variants = {
+  CONNECTION: "connection",
   PRIMARY: "primary",
+  DEFAULTICON: "defaultIcon",
+  DEFAULT: "default",
+  SQUARE:"square",
   SECONDARY: "secondary",
   TERTIARY: "tertiary",
   TEXT: "text",
   DANGER: "danger",
   SUBTLE: "subtle",
   SUCCESS: "success",
+  MAX:'max',
+  TOP:'top',
+  DOWN:'down',
+  UnstakeDOGE:"UnstakeDOGE",
+  SQRT:"sqrt"
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];
@@ -45,6 +54,9 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
   disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  bk?:string;
+  color?:string;
+  borderRadius?:string
 }
 
 export type ButtonProps<P extends ElementType = "button"> = PolymorphicComponentProps<P, BaseButtonProps>;

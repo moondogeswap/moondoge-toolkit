@@ -16,8 +16,8 @@ export const Default: React.FC = (args) => {
 
 export const Avatar = Default.bind({});
 Avatar.args = {
-  width: 40,
-  height: 40,
+  width: 36,
+  height: 36,
   variant: "circle",
 };
 
@@ -30,7 +30,7 @@ Animation.args = {
 
 export const ParentSize: React.FC = (args) => {
   return (
-    <div style={{ width: 200, height: 90 }}>
+    <div style={{ width: 200, height: 20 }}>
       {" "}
       <Skeleton {...args} />{" "}
     </div>

@@ -15,9 +15,10 @@ const Dot = styled.span<DotProps>`
   width: 10px;
   height: 10px;
   pointer-events: none;
-  border: 2px solid ${({ theme }) => theme.colors.invertedContrast};
+  border: 2px solid #FFFFFF;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  background: #FFB000;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.failure};
 `;
 
 const NotificationDot: React.FC<NotificationDotProps> = ({ show = false, children, ...props }) => (

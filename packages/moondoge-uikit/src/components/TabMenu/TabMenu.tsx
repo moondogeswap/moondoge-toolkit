@@ -27,18 +27,54 @@ const Inner = styled(Flex)`
   }
 `;
 
-const ButtonMenu: React.FC<TabMenuProps> = ({ activeIndex = 0, onItemClick, children }) => {
+const ScaleWrapper = styled(Flex)`
+  overflow-x: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+`;
+
+const ScaleInner = styled(Flex)`
+  justify-content: space-between;
+
+  & > button + button {
+    margin-left: 63px;
+  }
+
+${({ theme }) => theme.mediaQueries.md} {
+  flex - grow: 0;
+}
+`;
+
+
+const ButtonMenu: React.FC<TabMenuProps> = ({ activeIndex = 0, onItemClick, children, scale }) => {
   return (
-    <Wrapper p={["0 4px", "0 16px"]}>
-      <Inner>
-        {Children.map(children, (child: ReactElement, index) => {
-          return cloneElement(child, {
-            isActive: activeIndex === index,
-            onClick: onItemClick ? () => onItemClick(index) : undefined,
-          });
-        })}
-      </Inner>
-    </Wrapper>
+    <>
+      {
+        scale ? <ScaleWrapper>
+          <ScaleInner>
+            {Children.map(children, (child: ReactElement, index) => {
+              return cloneElement(child, {
+                isActive: activeIndex === index,
+                onClick: onItemClick ? () => onItemClick(index) : undefined,
+              });
+            })}
+          </ScaleInner>
+        </ScaleWrapper> :
+          <Wrapper p={["0 4px", "0 16px"]}>
+            <Inner>
+              {Children.map(children, (child: ReactElement, index) => {
+                return cloneElement(child, {
+                  isActive: activeIndex === index,
+                  onClick: onItemClick ? () => onItemClick(index) : undefined,
+                });
+              })}
+            </Inner>
+          </Wrapper>
+      }
+    </>
   );
 };
 

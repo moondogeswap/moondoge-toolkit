@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes, DefaultTheme } from "styled-components";
 import { Text } from "../../../components/Text";
 import { Colors } from "../../../theme/types";
-import { MENU_ENTRY_HEIGHT } from "../config";
+import { MENU_ENTRY_HEIGHT, MENU_HEIGHT } from "../config";
 
 export interface Props {
   secondary?: boolean;
@@ -21,7 +21,6 @@ const rainbowAnimation = keyframes`
 `;
 
 const LinkLabel = styled.div<{ isPushed: boolean }>`
-  color: ${({ isPushed, theme }) => (isPushed ? theme.colors.textSubtle : "transparent")};
   transition: color 0.4s;
   flex-grow: 1;
 `;
@@ -30,26 +29,38 @@ const MenuEntry = styled.div<Props>`
   cursor: pointer;
   display: flex;
   align-items: center;
-  height: ${MENU_ENTRY_HEIGHT}px;
+  height:100%;
   padding: ${({ secondary }) => (secondary ? "0 32px" : "0 16px")};
   font-size: ${({ secondary }) => (secondary ? "14px" : "16px")};
-  background-color: ${({ secondary, theme }) => (secondary ? theme.colors.background : "transparent")};
-  color: ${({ theme }) => theme.colors.textSubtle};
-  box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
+  background: ${({ isActive, theme }) => (isActive ? theme.colors.menuBk : "transparent")};
+  color: ${({ isActive, theme }) => isActive ? theme.colors.menuActive : theme.colors.menuDefault};
+  position: relative;
+
+  &:after{
+    content:"";
+    width:80%;
+    height: 4px;
+    background: ${({ isActive, theme }) => isActive ? theme.colors.menuActive : 'none'};
+    position: absolute;
+    left:0;
+    right: 0;
+    margin: 0 auto;
+    bottom:0;
+  }
+
 
   a {
     display: flex;
     align-items: center;
     width: 100%;
-    height: 100%;
   }
 
   svg {
-    fill: ${({ theme }) => theme.colors.textSubtle};
+    fill: ${({ isActive, theme }) => isActive ? theme.colors.menuActive : theme.colors.menuDefault};
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.tertiary};
+    background-color: ${({ theme }) => theme.colors.menuBk};
   }
 
   // Safari fix
@@ -68,7 +79,7 @@ MenuEntry.defaultProps = {
   role: "button",
 };
 
-const LinkStatus = styled(Text)<{ color: keyof Colors }>`
+const LinkStatus = styled(Text) <{ color: keyof Colors }>`
   border-radius: ${({ theme }) => theme.radii.default};
   padding: 0 8px;
   border: 2px solid;

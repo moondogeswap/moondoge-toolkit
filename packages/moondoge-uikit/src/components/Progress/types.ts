@@ -1,4 +1,5 @@
 export const variants = {
+  DEFAULT: 'default',
   ROUND: "round",
   FLAT: "flat",
 } as const;

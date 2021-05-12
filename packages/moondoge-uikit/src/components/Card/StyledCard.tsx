@@ -4,6 +4,7 @@ import { CardProps } from "./types";
 
 interface StyledCardProps extends CardProps {
   theme: DefaultTheme;
+
 }
 
 /**
@@ -24,6 +25,9 @@ const getBoxShadow = ({ isActive, isSuccess, isWarning, theme }: StyledCardProps
 
   return theme.card.boxShadow;
 };
+const defaultCardStyles = () => {
+
+}
 
 const StyledCard = styled.div<StyledCardProps>`
   background-color: ${({ theme }) => theme.card.background};
@@ -42,6 +46,7 @@ StyledCard.defaultProps = {
   isSuccess: false,
   isWarning: false,
   isDisabled: false,
+  defaultCardBackground: ""
 };
 
 export default StyledCard;

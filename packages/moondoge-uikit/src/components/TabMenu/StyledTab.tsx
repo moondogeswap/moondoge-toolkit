@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 interface StyledTabProps {
-  color: "backgroundAlt" | "textSubtle";
-  bgColor: "textSubtle" | "input";
+  color: "publicColor" | "white" | "stepMenuColor";
+  bgColor: "textSubtle" | "stepMenuBkColor";
 }
 
 const StyledTab = styled.button<StyledTabProps>`
@@ -12,15 +12,15 @@ const StyledTab = styled.button<StyledTabProps>`
   border: 0;
   outline: 0;
   flex-grow: 1;
-  padding: 8px;
-  border-radius: 16px 16px 0 0;
+  padding: 6px;
+  border-radius: 10px 10px 0 0;
   color: ${({ theme, color }) => theme.colors[color]};
-  background-color: ${({ theme, bgColor }) => theme.colors[bgColor]};
+  background: ${({ theme, bgColor }) => theme.colors[bgColor]};
 
   ${({ theme }) => theme.mediaQueries.md} {
     flex-grow: 0;
-    padding: 8px 12px;
+    padding: 6px 12px;
   }
 `;
 
-export default StyledTab;
+export default StyledTab

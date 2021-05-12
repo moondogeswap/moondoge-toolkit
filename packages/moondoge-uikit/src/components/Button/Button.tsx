@@ -4,7 +4,7 @@ import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
 
 const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.Element => {
-  const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
+  const { startIcon, endIcon, external, className, isLoading, disabled, children, isVariant, ...rest } = props;
   const internalProps = external ? getExternalLinkProps() : {};
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];
@@ -20,6 +20,7 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
   return (
     <StyledButton
       $isLoading={isLoading}
+      $isVariant={isVariant}
       className={classNames.join(" ")}
       disabled={isDisabled}
       {...internalProps}
@@ -46,6 +47,8 @@ Button.defaultProps = {
   variant: variants.PRIMARY,
   scale: scales.MD,
   disabled: false,
+  isVariant: false
+
 };
 
 export default Button;

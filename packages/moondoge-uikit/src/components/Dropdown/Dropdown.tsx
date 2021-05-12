@@ -26,11 +26,23 @@ const DropdownContent = styled.div<{ position: Position }>`
   bottom: ${getBottom};
   background-color: ${({ theme }) => theme.nav.background};
   box-shadow: ${({ theme }) => theme.shadows.level1};
-  padding: 16px;
+  padding: 13px 0;
   max-height: 500px;
   overflow-y: auto;
   z-index: ${({ theme }) => theme.zIndices.dropdown};
   border-radius: ${({ theme }) => theme.radii.small};
+  ::-webkit-scrollbar-thumb{
+    background: #EC915A
+  }
+  div{
+    padding:0 18px;
+    font-weight: bold;
+    line-height: 20px;
+    &:hover{
+      background: #FFF1D5;
+      color:#A56A46
+    }
+  }
 `;
 
 const Container = styled.div`

@@ -1,9 +1,12 @@
 import React from "react";
+import styled, { DefaultTheme } from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 import Text from "../Text/Text";
 import Svg from "./Svg";
-
+interface ThemedProps {
+  theme: DefaultTheme;
+}
 export default {
   title: "Components/Svg Icons",
   component: Svg,
@@ -13,14 +16,14 @@ export default {
 export const Default: React.FC = () => {
   return (
     <div>
-      <Svg viewBox="0 0 18 13">
-        <path d="M6 10.2001L2.5 6.70007C2.11 6.31007 1.49 6.31007 1.1 6.70007C0.709995 7.09007 0.709995 7.71007 1.1 8.10007L5.29 12.2901C5.68 12.6801 6.31 12.6801 6.7 12.2901L17.3 1.70007C17.69 1.31007 17.69 0.690068 17.3 0.300068C16.91 -0.0899316 16.29 -0.0899316 15.9 0.300068L6 10.2001Z" />
+      <Svg viewBox="0 0 20 18">
+        <path id="Shape" d="M7.214,17.5a1.487,1.487,0,0,0-.127,2.016,1.3,1.3,0,0,0,1.906.134l5.4-5a1.485,1.485,0,0,0,.038-2.114L2.278.39A1.3,1.3,0,0,0,.369.448,1.487,1.487,0,0,0,.423,2.467L11.5,13.531Z" transform="translate(20) rotate(90)" fill="#ec915a" />
       </Svg>
-      <Svg color="red" viewBox="0 0 18 13">
-        <path d="M6 10.2001L2.5 6.70007C2.11 6.31007 1.49 6.31007 1.1 6.70007C0.709995 7.09007 0.709995 7.71007 1.1 8.10007L5.29 12.2901C5.68 12.6801 6.31 12.6801 6.7 12.2901L17.3 1.70007C17.69 1.31007 17.69 0.690068 17.3 0.300068C16.91 -0.0899316 16.29 -0.0899316 15.9 0.300068L6 10.2001Z" />
+      <Svg color="red" viewBox="0 0 20 18">
+        <path id="Shape" d="M7.214,17.5a1.487,1.487,0,0,0-.127,2.016,1.3,1.3,0,0,0,1.906.134l5.4-5a1.485,1.485,0,0,0,.038-2.114L2.278.39A1.3,1.3,0,0,0,.369.448,1.487,1.487,0,0,0,.423,2.467L11.5,13.531Z" transform="translate(20) rotate(90)" fill="#ec915a" />
       </Svg>
-      <Svg color="primary" width="50px" viewBox="0 0 18 13">
-        <path d="M6 10.2001L2.5 6.70007C2.11 6.31007 1.49 6.31007 1.1 6.70007C0.709995 7.09007 0.709995 7.71007 1.1 8.10007L5.29 12.2901C5.68 12.6801 6.31 12.6801 6.7 12.2901L17.3 1.70007C17.69 1.31007 17.69 0.690068 17.3 0.300068C16.91 -0.0899316 16.29 -0.0899316 15.9 0.300068L6 10.2001Z" />
+      <Svg color="primary" width="40px" viewBox="0 0 40 30">
+        <path id="Shape" d="M14.374,34.993a2.982,2.982,0,0,0-.253,4.032,2.583,2.583,0,0,0,3.8.269l10.764-10a2.977,2.977,0,0,0,.076-4.227L4.539.78A2.582,2.582,0,0,0,.735.9,2.983,2.983,0,0,0,.843,4.934L22.91,27.062Z" transform="translate(40) rotate(90)" fill="#ec915a" />
       </Svg>
     </div>
   );
@@ -34,33 +37,47 @@ const components = context.keys().reduce((accum, path) => {
     [file]: context(path),
   };
 }, {});
-
+const IconBox = styled.div<{ width: string }>`
+  padding:${({ width }) => width === '32px' ? '8px' : '5px'};
+  border: 1px solid #a56a4617;
+  margin-right: 6px;
+`;
+const Content = styled.div<{ theme: ThemedProps }>`
+  margin-right: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+`;
+const Container = styled.div<{ theme: ThemedProps }>`
+  border:1px solid ${({ theme }) => theme.colors.svgBorder};
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:128px;
+  justify-content:center;
+  padding:6px;
+  margin-bottom:8px;
+`;
 export const Icons: React.FC = () => {
   return (
     <Flex justifyContent="start" alignItems="center" flexWrap="wrap">
       {Object.keys(components).map((file) => {
         const Icon = components[file].default;
         return (
-          <Flex
-            key={file}
-            flexDirection="column"
-            alignItems="center"
-            width="128px"
-            style={{ border: "1px solid #eee" }}
-            justifyContent="center"
-            py="8px"
-            m="4px"
-          >
-            <Flex alignItems="center" justifyContent="center" style={{ flex: 1 }} height="100%">
-              <Icon width="48px" />
-              <Icon width="24px" color="secondary" ml="4px" />
-            </Flex>
-            <Box py="4px">
-              <Text color="textSubtle" fontSize="14px">
-                {file}
-              </Text>
-            </Box>
-          </Flex>
+          <Content key={file}>
+            <Container>
+              <Flex alignItems="center" justifyContent="center" style={{ flex: 1 }} height="100%">
+                <IconBox width="32px">
+                  <Icon width="32px" color="svgFirstColor" />
+                </IconBox>
+                <IconBox width="14px">
+                  <Icon width="14px" color="svgSecondColor" />
+                </IconBox>
+              </Flex>
+            </Container>
+            <Text color="stepMenuColor" fontSize="14px">
+              {file}
+            </Text>
+          </Content>
         );
       })}
     </Flex>

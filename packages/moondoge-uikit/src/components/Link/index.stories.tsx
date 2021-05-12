@@ -1,5 +1,5 @@
 import React from "react";
-import { PancakesIcon } from "../Svg";
+import { LogoIconDoge } from "../Svg";
 import { Link, LinkExternal } from "./index";
 
 export default {
@@ -26,7 +26,7 @@ export const Default: React.FC = () => {
         <Link href="/">Default</Link>
       </div>
       <div>
-        <Link href="/" color="text">
+        <Link href="/" color="checkboxChecked">
           Custom color
         </Link>
       </div>
@@ -38,7 +38,7 @@ export const Default: React.FC = () => {
       <div>
         <Link href="/">
           With icon
-          <PancakesIcon />
+          <LogoIconDoge width="15" />
         </Link>
       </div>
       <div>

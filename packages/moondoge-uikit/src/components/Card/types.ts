@@ -18,6 +18,11 @@ export type CardTheme = {
     default: string;
     blue: string;
     violet: string;
+    defaultY:string;
+    darkY:string;
+    darkSuccess:string;
+    darkPurple:string;
+    darkGreen:string
   };
   dropShadow: string;
 };
@@ -28,4 +33,5 @@ export interface CardProps extends SpaceProps, HTMLAttributes<HTMLDivElement> {
   isWarning?: boolean;
   isDisabled?: boolean;
   ribbon?: React.ReactNode;
+  defaultCardBackground?:string
 }

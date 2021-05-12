@@ -15,10 +15,10 @@ const Modal: React.FC<ModalProps> = ({
   ...props
 }) => (
   <ModalContainer minWidth={minWidth} {...props}>
-    <ModalHeader background={headerBackground}>
+    <ModalHeader background={headerBackground} align="center">
       <ModalTitle>
         {onBack && <ModalBackButton onBack={onBack} />}
-        <Heading>{title}</Heading>
+        <Heading color="publicColor">{title}</Heading>
       </ModalTitle>
       {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss} />}
     </ModalHeader>

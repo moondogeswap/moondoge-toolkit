@@ -28,8 +28,8 @@ const Slider: React.FC<SliderProps> = ({
 
   const progressPercentage = (value / max) * 100;
   const isMax = value === max;
-  const progressWidth = isMax ? "calc(100% - 16px)" : `${progressPercentage}%`;
-  const labelProgress = isMax ? "calc(100% - 12px)" : `${progressPercentage}%`;
+  const progressWidth = isMax ? "calc(100% - 10px)" : `${progressPercentage}%`;
+  const labelProgress = isMax ? "calc(100% - 6px)" : `${progressPercentage}%`;
   const displayValueLabel = isMax ? "MAX" : valueLabel;
   return (
     <Box position="relative" height="48px" {...props}>
