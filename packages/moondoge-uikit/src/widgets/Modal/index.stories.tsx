@@ -14,7 +14,7 @@ export default {
 const CustomModal: React.FC<ModalProps> = ({ title, onDismiss, ...props }) => (
   <Modal title={title} onDismiss={onDismiss} {...props}>
     <Heading>{title}</Heading>
-    <Button>This button Does nothing</Button>
+    <Button variant="connection">This button Does nothing</Button>
   </Modal>
 );
 
@@ -25,7 +25,7 @@ export const Default: React.FC = () => {
   const [onPresent3] = useModal(<CustomModal title="Modal 3" headerBackground={theme.colors.gradients.cardHeader} />);
   return (
     <div>
-      <Button onClick={onPresent1}>Open modal 1</Button>
+      <Button variant="connection" onClick={onPresent1}>Open modal 1</Button>
       <Button onClick={onPresent2}>Open modal 2</Button>
       <Button onClick={onPresent3}>Open modal with background</Button>
     </div>

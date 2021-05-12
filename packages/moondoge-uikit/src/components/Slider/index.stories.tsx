@@ -74,8 +74,20 @@ export const Balance: React.FC = () => {
   };
 
   return (
-    <Box width="420px">
+    <Box width="500px">
       <Slider name="slider" min={0} max={maxBalance} value={balance} onValueChanged={handleChange} />
+      <Flex justifyContent="space-between" py="16px">
+        {percentShortcuts.map((percent) => {
+          const handleClick = () => {
+            setBalance((percent / 100) * maxBalance);
+          };
+
+          return <Button scale="sm" variant="sqrt" onClick={handleClick}>{`${percent}%`}</Button>;
+        })}
+        <Button scale="sm" variant="sqrt" onClick={setMax}>
+          Max
+        </Button>
+      </Flex>
       <Flex justifyContent="space-between" py="16px">
         {percentShortcuts.map((percent) => {
           const handleClick = () => {
@@ -84,7 +96,7 @@ export const Balance: React.FC = () => {
 
           return <Button scale="sm" variant="secondary" onClick={handleClick}>{`${percent}%`}</Button>;
         })}
-        <Button scale="sm" variant="connection" onClick={setMax}>
+        <Button scale="sm" variant="secondary" onClick={setMax}>
           Max
         </Button>
       </Flex>

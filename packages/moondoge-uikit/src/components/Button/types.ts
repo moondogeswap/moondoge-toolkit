@@ -23,7 +23,8 @@ export const variants = {
   MAX:'max',
   TOP:'top',
   DOWN:'down',
-  UnstakeDOGE:"UnstakeDOGE"
+  UnstakeDOGE:"UnstakeDOGE",
+  SQRT:"sqrt"
 } as const;
 
 export type Scale = typeof scales[keyof typeof scales];

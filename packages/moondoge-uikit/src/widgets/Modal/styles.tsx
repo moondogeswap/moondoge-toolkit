@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Flex from "../../components/Box/Flex";
 import { Box } from "../../components/Box";
-import { ArrowBackIcon, CloseIcon, CloseIconNew } from "../../components/Svg";
+import { ArrowBackIcon, CloseIcon } from "../../components/Svg";
 import { IconButton } from "../../components/Button";
 import { ModalProps } from "./types";
 
@@ -27,7 +27,7 @@ export const ModalBody = styled(Flex)`
 export const ModalCloseButton: React.FC<{ onDismiss: ModalProps["onDismiss"] }> = ({ onDismiss }) => {
   return (
     // <IconButton variant="text" onClick={onDismiss} aria-label="Close the dialog">
-    <CloseIconNew color="primary" onClick={onDismiss} aria-label="Close the dialog" />
+    <CloseIcon color="publicColor" onClick={onDismiss} aria-label="Close the dialog" />
     // </IconButton>
   );
 };

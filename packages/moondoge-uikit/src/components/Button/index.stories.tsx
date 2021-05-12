@@ -199,7 +199,7 @@ export const Anchors: React.FC = () => {
   return (
     <>
       <Box mb="32px">
-        {Object.values(variants).map((variant) => {
+        {Object.values(variants).filter(val => !["top", "down"].includes(val)).map((variant) => {
           return (
             <Box key={variant} mb="32px">
               {Object.values(scales).map((scale) => {
@@ -261,10 +261,10 @@ export const Variants: React.FC = () => {
           </Button>
         </Row>
         <Row>
-          <IconButton>
+          <IconButton width="43px" height="43px">
             <LogoIconDoge />
           </IconButton>
-          <IconButton>
+          <IconButton width="43px" height="43px">
             <AddIcon />
           </IconButton>
         </Row>

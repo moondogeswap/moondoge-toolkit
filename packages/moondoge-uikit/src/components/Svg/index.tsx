@@ -20,7 +20,7 @@ export { default as ChevronDownIcon } from "./Icons/ChevronDown";
 export { default as ChevronLeftIcon } from "./Icons/ChevronLeft";
 export { default as ChevronRightIcon } from "./Icons/ChevronRight";
 export { default as ChevronUpIcon } from "./Icons/ChevronUp";
-export { default as CloseIcon } from "./Icons/Close";
+export { default as Close } from "./Icons/Close";
 export { default as CogIcon } from "./Icons/Cog";
 export { default as CommunityIcon } from "./Icons/Community";
 export { default as CopyIcon } from "./Icons/Copy";
@@ -72,10 +72,15 @@ export { default as RefreshIcon } from "./Icons/Refresh";
 export { default as LogoIconDoge } from "./Icons/LogoIcon";
 export { default as LineIcon } from "./Icons/Line";
 export { default as LinkIcon } from "./Icons/Link";
-export { default as CloseIconNew } from "./Icons/CloseIcon";
+export { default as CloseIcon } from "./Icons/CloseIcon";
 export { default as ArrowRight } from "./Icons/ArrowRight";
 export { default as Top } from "./Icons/Top";
 export { default as LineDown } from "./Icons/LineDown";
+export { default as InfoError } from "./Icons/InfoError"
+export { default as Language } from "./Icons/Language"
+export { default as Sun } from "./Icons/Sun"
+export { default as HelpSolid } from "./Icons/HelpSolid"
+
 
 
 export { default as Svg } from "./Svg";

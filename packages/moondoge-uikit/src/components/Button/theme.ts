@@ -51,7 +51,7 @@ export const styleVariants = {
   },
   [variants.SECONDARY]: {
     backgroundColor: "transparent",
-    border: "2px solid #A56A46",
+    border: "1px solid #A56A46",
     boxShadow: "none",
     color: "#A56A46",
     borderRadius:'25px',
@@ -60,13 +60,13 @@ export const styleVariants = {
     },
   },
   [variants.MAX]: {
-    background: "#FBFAF6",
     border: "1px solid #A56A46",
     boxShadow: "none",
     color: "#A56A46",
     borderRadius:'22px',
     height:'33px',
     fontSize: '18px',
+    backgroundColor: "butRadiusMax",
     ":hover": {
       background: "#A56A46",
       color:'#fff',
@@ -119,6 +119,12 @@ export const styleVariants = {
   [variants.SUCCESS]: {
     backgroundColor: "success",
     color: "white",
+  },
+  [variants.SQRT]: {
+    backgroundColor: "butRadiusMax",
+    color: "publicColor",
+    padding:"14px 28px",
+    borderRadius: "10px",
   },
   [variants.TEXT]: {
     backgroundColor: "transparent",

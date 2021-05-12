@@ -8,7 +8,7 @@ const LinkExternal: React.FC<LinkProps> = ({ children, ...props }) => {
   return (
     <Link external {...props}>
       {children}
-      <LinkIcon color="primary" ml="4px" />
+      <LinkIcon color="publicColor" width="16px" ml="4px" />
     </Link>
   );
 };

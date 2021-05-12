@@ -99,7 +99,16 @@ export type Colors = {
   lineDownBk:string;
   lightDark:string;
   radioBk:string;
-  toggleDot:string
+  toggleDot:string;
+  menuActive:string;
+  menuDefault:string;
+  menuBk:string;
+  svgFirstColor:string;
+  svgSecondColor:string;
+  svgBorder:string;
+  butRadiusMax:string;
+  navBorderColor:string;
+  connectMenuBk:string;
 };
 
 export type ZIndices = {

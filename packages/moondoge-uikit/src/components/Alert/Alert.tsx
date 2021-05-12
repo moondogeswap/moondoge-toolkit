@@ -1,12 +1,12 @@
 import React from "react";
 import styled, { DefaultTheme } from "styled-components";
-import CheckmarkCircleIcon from "../Svg/Icons/CheckmarkCircle";
+import InfoError from "../Svg/Icons/InfoError";
 import ErrorIcon from "../Svg/Icons/Error";
 import BlockIcon from "../Svg/Icons/Block";
 import InfoIcon from "../Svg/Icons/Info";
 import { Text } from "../Text";
-import { IconButton } from "../Button";
-import { CloseIcon } from "../Svg";
+import { Button } from "../Button";
+import { Close } from "../Svg";
 import Flex from "../Box/Flex";
 import { AlertProps, variants } from "./types";
 
@@ -37,7 +37,7 @@ const getIcon = (variant: AlertProps["variant"] = variants.INFO) => {
     case variants.WARNING:
       return ErrorIcon;
     case variants.SUCCESS:
-      return CheckmarkCircleIcon;
+      return InfoError;
     case variants.INFO:
     default:
       return InfoIcon;
@@ -89,9 +89,9 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
       </Details>
       {onClick && (
         <CloseHandler>
-          <IconButton scale="sm" variant="text" onClick={onClick}>
-            <CloseIcon width="24px" />
-          </IconButton>
+          <Button scale="sm" variant="text" onClick={onClick}>
+            <Close width="12px" onClick={onClick} />
+          </Button>
         </CloseHandler>
       )}
     </StyledAlert>

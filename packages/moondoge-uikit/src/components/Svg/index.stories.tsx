@@ -1,9 +1,12 @@
 import React from "react";
+import styled, { DefaultTheme } from "styled-components";
 import Box from "../Box/Box";
 import Flex from "../Box/Flex";
 import Text from "../Text/Text";
 import Svg from "./Svg";
-
+interface ThemedProps {
+  theme: DefaultTheme;
+}
 export default {
   title: "Components/Svg Icons",
   component: Svg,
@@ -34,33 +37,47 @@ const components = context.keys().reduce((accum, path) => {
     [file]: context(path),
   };
 }, {});
-
+const IconBox = styled.div<{ width: string }>`
+  padding:${({ width }) => width === '32px' ? '8px' : '5px'};
+  border: 1px solid #a56a4617;
+  margin-right: 6px;
+`;
+const Content = styled.div<{ theme: ThemedProps }>`
+  margin-right: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+`;
+const Container = styled.div<{ theme: ThemedProps }>`
+  border:1px solid ${({ theme }) => theme.colors.svgBorder};
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:128px;
+  justify-content:center;
+  padding:6px;
+  margin-bottom:8px;
+`;
 export const Icons: React.FC = () => {
   return (
     <Flex justifyContent="start" alignItems="center" flexWrap="wrap">
       {Object.keys(components).map((file) => {
         const Icon = components[file].default;
         return (
-          <Flex
-            key={file}
-            flexDirection="column"
-            alignItems="center"
-            width="128px"
-            style={{ border: "1px solid #efefef" }}
-            justifyContent="center"
-            py="8px"
-            m="4px"
-          >
-            <Flex alignItems="center" justifyContent="center" style={{ flex: 1 }} height="100%">
-              <Icon width="32px" />
-              <Icon width="14px" color="#000" ml="4px" />
-            </Flex>
-            <Box py="4px">
-              <Text color="textSubtle" fontSize="14px">
-                {file}
-              </Text>
-            </Box>
-          </Flex>
+          <Content key={file}>
+            <Container>
+              <Flex alignItems="center" justifyContent="center" style={{ flex: 1 }} height="100%">
+                <IconBox width="32px">
+                  <Icon width="32px" color="svgFirstColor" />
+                </IconBox>
+                <IconBox width="14px">
+                  <Icon width="14px" color="svgSecondColor" />
+                </IconBox>
+              </Flex>
+            </Container>
+            <Text color="stepMenuColor" fontSize="14px">
+              {file}
+            </Text>
+          </Content>
         );
       })}
     </Flex>
