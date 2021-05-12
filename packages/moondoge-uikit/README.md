@@ -1,8 +1,8 @@
-# 🥞 Pancake UIkit
+# 🥞 MoonDgoe UIkit
 
 [![Version](https://img.shields.io/npm/v/moondoge-uikit)](https://www.npmjs.com/package/moondoge-uikit) [![Size](https://img.shields.io/bundlephobia/min/moondoge-uikit)](https://www.npmjs.com/package/moondoge-uikit)
 
-Pancake UIkit is a set of React components and hooks used to build pages on Pancake's apps. It also contains a theme file for dark and light mode.
+MoonDoge UIkit is a set of React components and hooks used to build pages on MoonDgoe's apps. It also contains a theme file for dark and light mode.
 
 ## Install
 
@@ -12,7 +12,7 @@ Pancake UIkit is a set of React components and hooks used to build pages on Panc
 
 ### Theme
 
-Before using Pancake UIkit, you need to provide the theme file to styled-component.
+Before using MoonDgoe UIkit, you need to provide the theme file to styled-component.
 
 ```
 import { ThemeProvider } from 'styled-components'

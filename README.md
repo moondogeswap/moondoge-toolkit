@@ -4,7 +4,7 @@ This repository is a monorepo manage with [yarn workspaces](https://classic.yarn
 
 ## Packages
 
-- [moondoge-uikit](https://github.com/moondogeswap/moondoge-toolkit/tree/master/packages/moondoge-uikit) : React components used to build the Pancake UI
+- [moondoge-uikit](https://github.com/moondogeswap/moondoge-toolkit/tree/master/packages/moondoge-uikit) : React components used to build the MoonDoge UI
 - [eslint-config-moondoge](https://github.com/moondogeswap/moondoge-toolkit/tree/master/packages/eslint-config-moondoge) : An ESLint config for moondoge, with Typescript and Prettier support
 
 ## How to use

@@ -1,6 +1,6 @@
 # eslint-config-moondoge
 
-Pancake Eslint config with:
+MoonDgoe Eslint config with:
 
 - Airbnb config
 - Typescript
