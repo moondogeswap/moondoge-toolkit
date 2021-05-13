@@ -74,13 +74,9 @@ const Container = styled.div<SpinnerProps>`
   height:${({ size }) => size || 142}px;
   text-align:center;
 `;
-const IMG = styled.div<SpinnerProps>`
-  width: ${({ size }) => size || 142}px;
-  height:${({ size }) => size || 142}px;
-  background-image:url(${moonDoge});
-  background-size:100% 100%;
+const Image = styled.img`
   animation: ${move} 2s linear infinite;
-`;
+`
 const DotBot = styled.div`
   display:flex;
   justify-content: center;
@@ -124,7 +120,7 @@ const FloatingPanIcon = styled(PanIcon)`
 const Spinner: React.FC<SpinnerProps> = ({ size = 142 }) => {
   return (
     <Container size={size}>
-      <IMG size={size} />
+      <Image src={moonDoge} alt="" width={size} height={size} />
       <DotBot>
         <span />
         <span />
