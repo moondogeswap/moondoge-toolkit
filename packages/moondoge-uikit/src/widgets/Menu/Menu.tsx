@@ -130,7 +130,7 @@ const Menu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav showMenu={showMenu}>
         <a href={homeLink?.href ?? "/"}>
-          <img src={LogoDoge} alt="" />
+          <img src={LogoDoge} alt="" width={154} height={30} />
         </a>
         <PanelTabMenu
           isPushed={isPushed}
