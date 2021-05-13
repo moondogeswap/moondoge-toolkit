@@ -15,7 +15,7 @@ const Container = styled.div`
   flex: none;
   padding: 8px 4px;
   background-color: ${({ theme }) => theme.nav.background};
-  width:200px;
+  min-width:200px;
 `;
 
 const SettingsEntry = styled.div`
