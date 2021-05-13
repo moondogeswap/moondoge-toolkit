@@ -125,12 +125,12 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
-
+  console.log(profile, 'profile')
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
         <a href={homeLink?.href ?? "/"}>
-          <img src={LogoDoge} alt="" />
+          <img src={LogoDoge} alt="" width={154} height={30} />
         </a>
         <PanelTabMenu
           isPushed={isPushed}
