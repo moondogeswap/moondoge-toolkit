@@ -71,7 +71,11 @@ const MobileOnlyOverlay = styled(Overlay)`
     display: none;
   }
 `;
-
+const StyledLogoA = styled.a`
+display: inline-block;
+ min-width: 154px;
+ min-height: 30px;
+`;
 const Menu: React.FC<NavProps> = ({
   account,
   login,
@@ -129,9 +133,9 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
-        <a href={homeLink?.href ?? "/"}>
+        <StyledLogoA href={homeLink?.href ?? "/"}>
           <img src={LogoDoge} alt="" width={154} height={30} />
-        </a>
+        </StyledLogoA>
         <PanelTabMenu
           isPushed={isPushed}
           isMobile={isMobile}
