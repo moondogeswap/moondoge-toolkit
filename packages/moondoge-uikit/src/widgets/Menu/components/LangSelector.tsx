@@ -14,29 +14,32 @@ interface Props {
   currentLang: string;
   langs: LangType[];
   setLang: (lang: LangType) => void;
+  isMobile?: boolean
 }
 
-const LangSelector: React.FC<Props> = ({ currentLang, langs, setLang }) => (
+const LangSelector: React.FC<Props> = ({ currentLang, langs, setLang, isMobile }) => (
   <Dropdown
-    position="bottom"
+    position={isMobile ? 'top-right' : 'bottom'}
     target={
-      <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
+      < Button variant="text" startIcon={< LanguageIcon color="textSubtle" width="24px" />}>
         <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
-      </Button>
+      </Button >
     }
   >
-    {langs.map((lang) => (
-      <MenuButton
-        key={lang.code}
-        fullWidth
-        onClick={() => setLang(lang)}
-        // Safari fix
-        style={{ minHeight: "32px", height: "auto" }}
-      >
-        {lang.language}
-      </MenuButton>
-    ))}
-  </Dropdown>
+    {
+      langs.map((lang) => (
+        <MenuButton
+          key={lang.code}
+          fullWidth
+          onClick={() => setLang(lang)}
+          // Safari fix
+          style={{ minHeight: "32px", height: "auto" }}
+        >
+          {lang.language}
+        </MenuButton>
+      ))
+    }
+  </Dropdown >
 );
 
 export default React.memo(LangSelector, (prev, next) => prev.currentLang === next.currentLang);
