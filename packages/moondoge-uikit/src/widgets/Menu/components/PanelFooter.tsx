@@ -9,7 +9,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import SocialLinks from "./SocialLinks";
 import LangSelector from "./LangSelector";
 
-interface Props extends PanelProps, PushedProps {}
+interface Props extends PanelProps, PushedProps { }
 
 const Container = styled.div`
   flex: none;
@@ -43,26 +43,27 @@ const PanelFooter: React.FC<Props> = ({
   currentLang,
   langs,
   setLang,
+  isMobile,
 }) => {
-  if (!isPushed) {
-    return (
-      <Container>
-        <IconButton variant="text" onClick={() => pushNav(true)}>
-          <CogIcon />
-        </IconButton>
-      </Container>
-    );
-  }
+  // if (!isPushed) {
+  //   return (
+  //     <Container>
+  //       <IconButton variant="text" onClick={() => pushNav(true)}>
+  //         <CogIcon />
+  //       </IconButton>
+  //     </Container>
+  //   );
+  // }
 
   return (
     <Container>
-      <SocialEntry>
+      {/* <SocialEntry>
         <CakePrice cakePriceUsd={cakePriceUsd} />
         <SocialLinks />
-      </SocialEntry>
+      </SocialEntry> */}
       <SettingsEntry>
         <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
-        <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} />
+        <LangSelector currentLang={currentLang} langs={langs} setLang={setLang} isMobile={isMobile} />
       </SettingsEntry>
     </Container>
   );

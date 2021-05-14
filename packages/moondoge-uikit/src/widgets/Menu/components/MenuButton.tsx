@@ -3,8 +3,9 @@ import Button from "../../../components/Button/Button";
 
 const MenuButton = styled(Button)`
   color: ${({ theme }) => theme.colors.text};
-  padding: 0 8px;
+  padding-left:3px;
   border-radius: 8px;
+  margin-right:0;
 `;
 MenuButton.defaultProps = {
   variant: "text",
