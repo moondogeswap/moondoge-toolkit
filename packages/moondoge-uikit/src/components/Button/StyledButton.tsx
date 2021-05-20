@@ -72,7 +72,7 @@ const StyledButton = styled.button<BaseButtonProps>`
   ${getIsVariantStyles}
   align-items: center;
   border: 0;
-  border-radius: ${({ borderRadius }) => borderRadius || 16}px;
+  border-radius: ${({ borderradius }) => borderradius || 16}px;
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
