@@ -7,7 +7,7 @@ import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../../components/Svg";
 
 interface Props extends PushedProps {
   label: string;
-  icon: React.ReactElement;
+  icon?: React.ReactElement | null;
   initialOpenState?: boolean;
   className?: string;
   children: ReactNode;
@@ -28,6 +28,9 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   border-color: ${({ isOpen, isPushed }) => (isOpen && isPushed ? "rgba(133, 133, 133, 0.1)" : "transparent")};
   border-style: solid;
   border-width: 1px 0;
+  svg{
+    margin-right: 8px;
+  }
 `;
 
 const Accordion: React.FC<Props> = ({

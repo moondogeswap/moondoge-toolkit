@@ -7,7 +7,7 @@ import { ArrowDropDownIcon, ArrowDropUpIcon } from "../../../components/Svg";
 
 interface Props extends PushedProps {
   label: string;
-  icon: React.ReactElement;
+  icon?: React.ReactElement | null;
   initialOpenState?: boolean;
   className?: string;
   children: ReactNode;
@@ -32,6 +32,7 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   background:#fff;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(64, 39, 6, 0.22);
+
   &::before {
     content: "";
     position: absolute;
@@ -44,14 +45,23 @@ const AccordionContent = styled.div<{ isOpen: boolean; isPushed: boolean; maxHei
   }
 
   div[role="button"]{
-    display:${({ isOpen }) => isOpen ? 'block' : 'none'};
+    display:${({ isOpen }) => isOpen ? 'flex' : 'none'};
     color:#1A191B;
     height:26px;
     margin:4px 0;
     line-height:26px;
+    align-items: center;
+    padding:0 10px;
     &:hover{
       color:#A56A46;
       background:#FFF1D5;
+      svg{
+        fill:#A56A46
+      }
+    }
+    svg{
+      margin-right: 8px;
+      fill:#AAA;
     }
   }
 `;
