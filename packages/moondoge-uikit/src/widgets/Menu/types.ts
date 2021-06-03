@@ -34,16 +34,21 @@ export interface MenuSubEntry {
   href: string;
   calloutClass?: string;
   status?: LinkStatus;
+  openPageTarget?:boolean;
+  // icon?: string | React.ReactElement;
+  icon?: any;
 }
 
 export interface MenuEntry {
   label: string;
-  icon: string;
+  // icon?: string | React.ReactElement;
+  icon?: any;
   items?: MenuSubEntry[];
   href?: string;
   calloutClass?: string;
   initialOpenState?: boolean;
   status?: LinkStatus;
+  openPageTarget?:boolean
 }
 
 export interface PanelProps {

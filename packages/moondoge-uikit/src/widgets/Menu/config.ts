@@ -1,5 +1,5 @@
 import { LinkStatus } from "./types";
-
+import TwitterIcon from "./icons/twitterDefault"
 export const status = {
   LIVE: <LinkStatus>{
     text: "LIVE",
@@ -136,14 +136,18 @@ export const links = [
       {
         label: "Voting",
         href: "https://voting.pancakeswap.finance",
+        openPageTarget: true,
+        icon: "IfoIcon",
       },
       {
         label: "Github",
         href: "https://github.com/pancakeswap",
+        icon: "PoolIcon",
       },
       {
         label: "Docs",
         href: "https://docs.pancakeswap.finance",
+        icon: TwitterIcon
       },
       {
         label: "Blog",
