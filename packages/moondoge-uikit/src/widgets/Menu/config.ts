@@ -27,12 +27,10 @@ export const links = [
     items: [
       {
         label: "Exchange",
-        // href: "https://exchange.pancakeswap.finance",
         href: "/",
       },
       {
         label: "Liquidity",
-        // href: "https://exchange.pancakeswap.finance/#/pool",
         href: "/",
       },
     ],
@@ -41,7 +39,6 @@ export const links = [
     label: "Farms",
     icon: "FarmIcon",
     href: "/farms",
-    // status: status.LIVE,
   },
   {
     label: "Pools",
@@ -53,50 +50,20 @@ export const links = [
     icon: "TicketIcon",
     href: "/lottery",
   },
-  // {
-  //   label: "NFT",
-  //   icon: "NftIcon",
-  //   href: "/nft",
-  // },
-  // {
-  //   label: "Team Battle",
-  //   icon: "TeamBattleIcon",
-  //   href: "/competition",
-  //   status: status.SOON,
-  // },
-  // {
-  //   label: "Profile & Teams",
-  //   icon: "GroupsIcon",
-  //   items: [
-  //     {
-  //       label: "Leaderboard",
-  //       href: "/teams",
-  //       status: status.NEW,
-  //     },
-  //     {
-  //       label: "YourProfile",
-  //       href: "/",
-  //     },
-  //   ],
-  //   calloutClass: "rainbow",
-  // },
   {
     label: "Info",
     icon: "InfoIcon",
     items: [
       {
         label: "Overview",
-        // href: "https://pancakeswap.info",
         href: "/",
       },
       {
         label: "Tokens",
-        // href: "https://pancakeswap.info/tokens",
         href: "/",
       },
       {
         label: "Pairs",
-        // href: "https://pancakeswap.info/pairs",
         href: "/"
       },
       {
@@ -166,45 +133,59 @@ export const socials = [
   {
     label: "Telegram",
     icon: "TelegramIcon",
+    href: "/",
     items: [
       {
         label: "English",
+        href: "/"
       },
       {
         label: "Bahasa Indonesia",
+        href: "/"
       },
       {
         label: "中文",
+        href: "/"
       },
       {
         label: "Tiếng Việt",
+        href: "/"
       },
       {
         label: "Italiano",
+        href: "/"
       },
       {
         label: "русский",
+        href: "/"
       },
       {
         label: "Türkiye",
+        href: "/"
       },
       {
         label: "Português",
+        href: "/"
       },
       {
         label: "Español",
+        href: "/"
       },
       {
         label: "日本語",
+        href: "/"
       },
       {
         label: "Français",
+        href: "/"
       },
       {
         label: "Announcements",
+        href: "/"
       },
       {
         label: "Whale Alert",
+        href: "/"
       },
     ],
   },
