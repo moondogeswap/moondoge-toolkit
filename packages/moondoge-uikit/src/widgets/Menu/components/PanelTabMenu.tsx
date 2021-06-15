@@ -17,7 +17,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   justify-content: space-between;
   flex-shrink: 0;
   background-color: ${({ theme }) => theme.nav.background};
-  margin-left: 50px;
+  margin-left: 20px;
   height: 100%;
   ::-webkit-scrollbar{
     width:1px;
