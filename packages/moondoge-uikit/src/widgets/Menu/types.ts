@@ -49,6 +49,7 @@ export interface MenuEntry {
   initialOpenState?: boolean;
   status?: LinkStatus;
   openPageTarget?:boolean
+  translationId?:number
 }
 
 export interface PanelProps {
