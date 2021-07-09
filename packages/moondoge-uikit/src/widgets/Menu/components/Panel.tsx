@@ -10,7 +10,7 @@ interface Props extends PanelProps, PushedProps {
   isMobile: boolean;
 }
 
-const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean; isIPhone: boolean }>`
   position: fixed;
   padding-top: ${({ showMenu }) => (showMenu ? "80px" : 0)};
   top: 0;
@@ -28,6 +28,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   overflow: ${({ isPushed }) => (isPushed ? "initial" : "hidden")};
   transform: translate3d(0, 0, 0);
   ${({ isPushed }) => !isPushed && "white-space: nowrap;"};
+  ${({ isIPhone }) => isIPhone && "padding-bottom:44px"};
 
   ${({ theme }) => theme.mediaQueries.nav} {
     border-right: 2px solid rgba(133, 133, 133, 0.1);
@@ -37,8 +38,11 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean }>`
 
 const Panel: React.FC<Props> = (props) => {
   const { isPushed, showMenu } = props;
+  const isIPhone = new RegExp("\\biPhone\\b|\\biPod\\b", "i").test(
+    window.navigator.userAgent
+  );
   return (
-    <StyledPanel isPushed={isPushed} showMenu={showMenu}>
+    <StyledPanel isPushed={isPushed} showMenu={showMenu} isIPhone={isIPhone}>
       <PanelBody {...props} />
       <PanelFooter {...props} />
     </StyledPanel>
