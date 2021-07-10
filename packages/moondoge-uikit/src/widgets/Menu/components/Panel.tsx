@@ -28,7 +28,7 @@ const StyledPanel = styled.div<{ isPushed: boolean; showMenu: boolean; isIPhone:
   overflow: ${({ isPushed }) => (isPushed ? "initial" : "hidden")};
   transform: translate3d(0, 0, 0);
   ${({ isPushed }) => !isPushed && "white-space: nowrap;"};
-  ${({ isIPhone }) => isIPhone && "padding-bottom:80px"};
+  ${({ isIPhone }) => isIPhone && "padding-bottom:120px"};
 
   ${({ theme }) => theme.mediaQueries.nav} {
     border-right: 2px solid rgba(133, 133, 133, 0.1);
