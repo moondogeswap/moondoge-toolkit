@@ -19,11 +19,11 @@ const connectors: Config[] = [
   //   icon: VisionWallet,
   //   connectorId: ConnectorNames.WalletConnect,
   // },
-  // {
-  //   title: "TrustWallet",
-  //   icon: TrustWallet,
-  //   connectorId: ConnectorNames.Injected,
-  // },
+  {
+    title: "TrustWallet",
+    icon: TrustWallet,
+    connectorId: ConnectorNames.Injected,
+  },
   // {
   //   title: "MathWallet",
   //   icon: MathWallet,
