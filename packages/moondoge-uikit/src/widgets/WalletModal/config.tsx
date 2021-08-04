@@ -24,11 +24,11 @@ const connectors: Config[] = [
     icon: TrustWallet,
     connectorId: ConnectorNames.Injected,
   },
-  // {
-  //   title: "MathWallet",
-  //   icon: MathWallet,
-  //   connectorId: ConnectorNames.Injected,
-  // },
+  {
+    title: "MathWallet",
+    icon: MathWallet,
+    connectorId: ConnectorNames.Injected,
+  },
   // {
   //   title: "TokenPocket",
   //   icon: TokenPocket,
